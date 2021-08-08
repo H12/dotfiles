@@ -9,5 +9,5 @@ alias python=python3
 
 # Add tldr function
 function tldr
-	curl cht.sh/$argv | less -R
+	curl -s cht.sh/$argv | less -R
 end
