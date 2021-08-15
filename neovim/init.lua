@@ -17,8 +17,8 @@ u.cmd('hi GruvboxAquaSign       ctermfg=108 ctermbg=NONE')
 u.cmd('hi GruvboxOrangeSign     ctermfg=208 ctermbg=NONE')
 
 -- Telescope deps and config
-u.remap('<C-p>', ':Telescope find_files find_command=rg,--ignore,--hidden,--files<cr>')
-u.remap('<C-f>', ':Telescope live_grep find_command=rg,--hidden<cr>')
+u.map('<C-p>', ':Telescope find_files find_command=rg,--ignore,--hidden,--files<cr>')
+u.map('<C-f>', ':Telescope live_grep find_command=rg,--hidden<cr>')
 
 require('telescope').setup({
 	defaults = {
@@ -56,7 +56,7 @@ require'nvim-web-devicons'.setup({
 })
 
 -- Ranger & keybindings
-u.remap('<C-b>', ':Ranger<cr>')
+u.map('<C-b>', ':Ranger<cr>')
 
 -- Autocompletion
 vim.o.completeopt = "menuone,noselect"

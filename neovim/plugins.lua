@@ -23,7 +23,6 @@ return require('packer').startup(function()
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
 
-
 	-- Ranger
 	use 'francoiscabrol/ranger.vim'
 	use 'rbgrouleff/bclose.vim'

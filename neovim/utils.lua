@@ -19,7 +19,7 @@ function utils.cmd(vim_command)
 	vim.cmd(vim_command)
 end
 
-function utils.remap(lhs, rhs, mode, options)
+function utils.map(lhs, rhs, mode, options)
 	mode = mode or 'n'
 	options = options or { noremap = true }
 
