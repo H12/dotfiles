@@ -10,6 +10,7 @@ return require('packer').startup(function()
 	use 'pangloss/vim-javascript'
 	use 'MaxMEllon/vim-jsx-pretty'
 	use 'ElmCast/elm-vim'
+	use 'gleam-lang/gleam.vim'
 
 	-- Telescope and deps
 	use {
