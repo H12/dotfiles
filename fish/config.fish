@@ -15,3 +15,6 @@ alias python=python3
 function tldr
 	curl -s cht.sh/$argv | less -R
 end
+
+# Bind CTRL+e to editor
+bind \ce edit_command_buffer
