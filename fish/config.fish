@@ -26,4 +26,4 @@ function tldr
 end
 
 # Bind CTRL+e to editor
-bind \ce edit_command_buffer
+bind \co edit_command_buffer
