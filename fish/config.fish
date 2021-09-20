@@ -1,6 +1,12 @@
 # Add homebrew binaries to path
 set PATH /opt/homebrew/bin /opt/homebrew/sbin $PATH
 
+# Add ~/.local/bin to path
+set PATH /Users/henryfirth/.local/bin $PATH
+
+# Add llvm binaries to path
+set PATH (brew --prefix llvm)/bin $PATH
+
 # Set EDITOR and VISUAL
 set EDITOR nvim
 set VISUAL nvim
