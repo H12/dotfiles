@@ -8,8 +8,11 @@ set PATH /Users/henryfirth/.local/bin $PATH
 set PATH (brew --prefix llvm)/bin $PATH
 
 # Set EDITOR and VISUAL
-set EDITOR nvim
-set VISUAL nvim
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+
+# Make iex terminal remember history
+set -gx ERL_AFLAGS "-kernel shell_history enabled"
 
 # Set up asdf-vm
 source ~/.asdf/asdf.fish
