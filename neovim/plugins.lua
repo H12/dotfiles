@@ -42,6 +42,9 @@ return require('packer').startup(function()
 	use 'tpope/vim-repeat'
 	use 'tpope/vim-surround'
 
+	-- Tmux stuffs
+	use 'christoomey/vim-tmux-navigator'
+
 	-- Speedy Stylish GitGutter
 	use 'airblade/vim-gitgutter'
 end)

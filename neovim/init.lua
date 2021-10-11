@@ -78,6 +78,16 @@ u.cmd('hi GitGutterChange       ctermfg=214')
 u.cmd('hi GitGutterDelete       ctermfg=167')
 u.cmd('hi GitGutterChangeDelete ctermfg=208')
 
+-- Pane navigation respecting tmux
+u.cmd('let g:tmux_navigator_no_mappings = 1')
+u.cmd('let g:tmux_navigator_save_on_switch = 2')
+
+u.map('<C-h>', ':TmuxNavigateLeft<cr>', 'n', { noremap=true, silent=true })
+u.map('<C-j>', ':TmuxNavigateDown<cr>', 'n', { noremap=true, silent=true })
+u.map('<C-k>', ':TmuxNavigateUp<cr>', 'n', { noremap=true, silent=true })
+u.map('<C-l>', ':TmuxNavigateRight<cr>', 'n', { noremap=true, silent=true })
+u.map('<C-\\>', ':TmuxNavigatePrevious<cr>', 'n', { noremap=true, silent=true })
+
 -- Relative line numbers
 u.set_window('number', true)
 u.set_window('relativenumber', true)

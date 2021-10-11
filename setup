@@ -18,6 +18,8 @@ nvim_lsp=~/.config/nvim/lua/lsp.lua
 nvim_plugins=~/.config/nvim/lua/plugins.lua
 nvim_utils=~/.config/nvim/lua/utils.lua
 
+tmux=~/.tmux.conf
+
 bat=~/.config/bat/config
 hammerspoon=~/.hammerspoon/init.lua
 ranger=~/.config/ranger/rc.conf
@@ -127,6 +129,12 @@ if [ ! -f $nvim_utils ] ; then
 	echo "Creating symbolic link for nvim/lua/utils.lua..."
 	mkdir -p ~/.config/nvim/lua
 	ln -s $PWD/neovim/utils.lua $nvim_utils
+fi
+
+# Tmux
+if [ ! -f $tmux ] ; then
+	echo "Creating symbolic link for Tmux config..."
+	ln -s $PWD/tmux/tmux.conf $tmux
 fi
 
 # Ranger
