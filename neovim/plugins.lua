@@ -25,6 +25,11 @@ return require('packer').startup(function()
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
 
+	-- Tabline
+	use {
+		"nanozuki/tabby.nvim",
+		requires = {"kyazdani42/nvim-web-devicons"}
+	}
 	-- Ranger
 	use 'francoiscabrol/ranger.vim'
 	use 'rbgrouleff/bclose.vim'

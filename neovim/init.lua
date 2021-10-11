@@ -6,6 +6,9 @@ u = require('utils')
 -- Enable syntax first so `hi` cmds work
 u.cmd('syntax on')
 
+-- Turn on termguicolors
+vim.opt.termguicolors = true
+
 -- Gruvbox baby
 u.cmd('colorscheme gruvbox')
 u.cmd('hi GruvboxRedSign        ctermfg=167 ctermbg=NONE')
@@ -49,6 +52,12 @@ require('telescope').setup({
 require('lualine').setup({
 	options = { theme = 'gruvbox_material' }
 })
+
+-- Tabline setup
+require('tabby').setup({
+	tabline = require("tabby.presets").tab_only
+})
+
 
 -- DevIcons setup
 require'nvim-web-devicons'.setup({
