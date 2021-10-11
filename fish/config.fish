@@ -7,6 +7,9 @@ set PATH /Users/henryfirth/.local/bin $PATH
 # Add llvm binaries to path
 set PATH (brew --prefix llvm)/bin $PATH
 
+# Add flutter binaries to path
+set PATH /Users/henryfirth/code/flutter/bin $PATH
+
 # Set EDITOR and VISUAL
 set -gx EDITOR nvim
 set -gx VISUAL nvim
