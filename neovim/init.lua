@@ -104,3 +104,6 @@ u.set_global('incsearch', true)
 
 -- Pretty Terminal Commands
 u.cmd('command -nargs=+ T :bot 20sp term://<args>')
+
+-- Quickly Exit Terminal Mode
+u.map('<ESC>', '<C-\\><C-N>', 't')
