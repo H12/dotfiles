@@ -20,6 +20,7 @@ return require('packer').startup(function()
 	}
 
 	-- Statusline
+	use 'itchyny/vim-gitbranch'
 	use {
 		'hoob3rt/lualine.nvim',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
