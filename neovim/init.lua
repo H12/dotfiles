@@ -20,6 +20,9 @@ u.cmd('hi GruvboxPurpleSign     ctermfg=175 ctermbg=none guibg=none')
 u.cmd('hi GruvboxAquaSign       ctermfg=108 ctermbg=none guibg=none')
 u.cmd('hi GruvboxOrangeSign     ctermfg=208 ctermbg=none guibg=none')
 
+-- Make the background transparent
+u.cmd('hi Normal ctermbg=none guibg=none')
+
 -- Telescope deps and config
 u.map('<C-p>', ':Telescope find_files find_command=rg,--ignore,--hidden,--files<cr>')
 u.map('<C-f>', ':Telescope live_grep find_command=rg,--hidden<cr>')
@@ -60,8 +63,8 @@ require'lualine'.setup {
 	},
 	sections = {
 		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {'branch', 'diff'},
+		lualine_b = {'branch'},
+		lualine_c = {'diff'},
 		lualine_x = {'progress', 'location'},
 		lualine_y = {},
 		lualine_z = {}

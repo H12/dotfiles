@@ -50,7 +50,4 @@ return require('packer').startup(function()
 
 	-- Tmux stuffs
 	use 'christoomey/vim-tmux-navigator'
-
-	-- Speedy Stylish GitGutter
-	use 'airblade/vim-gitgutter'
 end)
