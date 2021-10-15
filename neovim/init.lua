@@ -152,3 +152,7 @@ u.cmd('command -nargs=+ T :bot 20sp term://<args>')
 
 -- Quickly Exit Terminal Mode
 u.map('<ESC>', '<C-\\><C-N>', 't')
+
+-- Add a "line" text object mapped to `ii`
+u.map('ii', ':<c-u>normal! v^o$h<cr>', 'o', { noremap=true, silent=true })
+u.map('ii', '^o$h', 'x', { noremap=true, silent=true })
