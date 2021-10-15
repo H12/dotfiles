@@ -12,6 +12,7 @@ return require('packer').startup(function()
 	use 'ElmCast/elm-vim'
 	use 'gleam-lang/gleam.vim'
 	use 'dart-lang/dart-vim-plugin'
+	use 'cespare/vim-toml'
 
 	-- Telescope and deps
 	use {
