@@ -1,4 +1,5 @@
 require('plugins/coq_nvim')
+require('plugins/gitsigns')
 require('plugins/lualine')
 require('plugins/nvim-tree')
 require('plugins/telescope')
@@ -41,6 +42,14 @@ return require('packer').startup(function()
 	-- Autocompletion
 	use 'ms-jpq/coq-nvim'
 	use 'ms-jpq/coq.artifacts'
+
+	-- Git signs
+	use {
+		'lewis6991/gitsigns.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim'
+		},
+	}
 
 	-- Tpope goodness
 	use 'tpope/vim-fugitive'
