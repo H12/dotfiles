@@ -21,5 +21,3 @@ brew "fish"
 
 # Casks
 cask "hammerspoon"
-cask "kitty"
-
