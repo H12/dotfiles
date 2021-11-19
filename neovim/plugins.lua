@@ -1,3 +1,8 @@
+require('plugins/coq_nvim')
+require('plugins/lualine')
+require('plugins/nvim-tree')
+require('plugins/telescope')
+
 return require('packer').startup(function()
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
@@ -6,13 +11,9 @@ return require('packer').startup(function()
 	use 'gruvbox-community/gruvbox'
 
 	-- Syntax highlighting
+	use 'sheerun/vim-polyglot'
 	use 'elixir-editors/vim-elixir'
-	use 'pangloss/vim-javascript'
-	use 'MaxMEllon/vim-jsx-pretty'
-	use 'ElmCast/elm-vim'
 	use 'gleam-lang/gleam.vim'
-	use 'dart-lang/dart-vim-plugin'
-	use 'cespare/vim-toml'
 
 	-- Telescope and deps
 	use {
@@ -27,21 +28,19 @@ return require('packer').startup(function()
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
 
-	-- Tabline
+	-- Nvim tree
 	use {
-		"nanozuki/tabby.nvim",
-		requires = {"kyazdani42/nvim-web-devicons"}
+		'kyazdani42/nvim-tree.lua',
+		requires = 'kyazdani42/nvim-web-devicons'
 	}
-	-- Ranger
-	use 'francoiscabrol/ranger.vim'
-	use 'rbgrouleff/bclose.vim'
 
 	-- Language Server Protocol
 	-- See lsp.lua for server-specific config
 	use 'neovim/nvim-lspconfig'
 
 	-- Autocompletion
-	use 'hrsh7th/nvim-compe'
+	use 'ms-jpq/coq-nvim'
+	use 'ms-jpq/coq.artifacts'
 
 	-- Tpope goodness
 	use 'tpope/vim-fugitive'

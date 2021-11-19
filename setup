@@ -12,10 +12,12 @@ omf_bundle=~/.config/omf/bundle
 omf_channel=~/.config/omf/channel
 omf_theme=~/.config/omf/theme
 
-nvim_init=~/.config/nvim/init.lua
+nvim_init=~/.config/nvim/init.vim
 nvim_ft=~/.config/nvim/after/ftplugin/
+nvim_config=~/.config/nvim/lua/config.lua
 nvim_lsp=~/.config/nvim/lua/lsp.lua
 nvim_plugins=~/.config/nvim/lua/plugins.lua
+nvim_plugin_configs=~/.config/nvim/lua/plugins/
 nvim_utils=~/.config/nvim/lua/utils.lua
 
 tmux=~/.tmux.conf
@@ -102,21 +104,15 @@ fi
 
 # Neovim
 if [ ! -f $nvim_init ] ; then
-	echo "Creating symbolic link for nvim/init.lua..."
+	echo "Creating symbolic link for nvim/init.vim..."
 	mkdir -p ~/.config/nvim
-	ln -s $PWD/neovim/init.lua $nvim_init
-fi
-
-if [ ! -d $nvim_ft ] ; then
-	echo "Creating symbolic link for nvim filetypes..."
-	mkdir -p ~/.config/nvim/after/ftplugin
-	ln -s $PWD/neovim/ftplugin/* $nvim_ft
+	ln -s $PWD/neovim/init.vim $nvim_init
 fi
 
 if [ ! -f $nvim_lsp ] ; then
-	echo "Copying lsp.lua to config location..."
+	echo "Creating symbolic link for nvim/lua/lsp.lua..."
 	mkdir -p ~/.config/nvim/lua
-	cp $PWD/neovim/lsp.lua $nvim_lsp
+	ln -s $PWD/neovim/lsp.lua $nvim_lsp
 fi
 
 if [ ! -f $nvim_plugins ] ; then
@@ -125,11 +121,15 @@ if [ ! -f $nvim_plugins ] ; then
 	ln -s $PWD/neovim/plugins.lua $nvim_plugins
 fi
 
-if [ ! -f $nvim_utils ] ; then
-	echo "Creating symbolic link for nvim/lua/utils.lua..."
-	mkdir -p ~/.config/nvim/lua
-	ln -s $PWD/neovim/utils.lua $nvim_utils
-fi
+echo "Creating symbolic link for nvim plugin configs..."
+rm -rf ~/.config/nvim/lua/plugins
+mkdir -p ~/.config/nvim/lua/plugins
+ln -s $PWD/neovim/plugins/* $nvim_plugin_configs
+
+echo "Creating symbolic link for nvim filetypes..."
+rm -rf ~/.config/nvim/after/ftplugin
+mkdir -p ~/.config/nvim/after/ftplugin
+ln -s $PWD/neovim/ftplugin/* $nvim_ft
 
 # Tmux
 if [ ! -f $tmux ] ; then
@@ -160,3 +160,5 @@ if [ ! -f $hammerspoon ] ; then
 	echo "Creating symbolic link for Hammerspoon config..."
 	ln -s $PWD/hammerspoon/init.lua $hammerspoon
 fi
+
+source ./script/setup_lsp
