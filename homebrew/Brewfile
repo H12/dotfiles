@@ -12,8 +12,7 @@ brew "vim"
 brew "tree-sitter", args: ["HEAD"]
 brew "luajit", args: ["HEAD"]
 brew "neovim", args: ["HEAD"]
-brew "fzf"
-brew "ripgrep"
+brew "the_silver_searcher"
 
 # Miscellaneous goodies
 brew "bat"
