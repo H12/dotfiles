@@ -1,0 +1,16 @@
+#!bin/bash
+
+bat=~/.config/bat/config
+hammerspoon=~/.hammerspoon/init.lua
+
+# BAT
+if [ ! -f $bat ] ; then
+	echo "Creating symbolic link for BAT config..."
+	ln -s $PWD/bat/config $bat
+fi
+
+# Hammerspoon
+if [ ! -f $hammerspoon ] ; then
+	echo "Creating symbolic link for Hammerspoon config..."
+	ln -s $PWD/hammerspoon/init.lua $hammerspoon
+fi

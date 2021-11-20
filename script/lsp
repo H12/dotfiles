@@ -1,0 +1,24 @@
+#!/bin/bash
+
+lsp_root=~/.config/lsp
+elixir_ls_dir=$lsp_root/elixir-ls
+
+# asdf-erlang
+asdf plugin-add erlang
+asdf install erlang 24.0.6
+
+# asdf-elixir
+asdf plugin-add elixir
+asdf install elixir 1.12.3-otp-24
+
+# elixir-ls
+echo "Fetching elixir-ls repo..."
+git clone https://github.com/elixir-lsp/elixir-ls.git $lsp_root/.tmp/elixir-ls &> /dev/null
+
+echo "Installing elixir-ls..."
+(cd $lsp_root/.tmp/elixir-ls && mix deps.get &> /dev/null)
+(cd $lsp_root/.tmp/elixir-ls && mix deps.compile &> /dev/null)
+(cd $lsp_root/.tmp/elixir-ls && mix elixir_ls.release -o $elixir_ls_dir &> /dev/null)
+
+echo "Removing temporary files..."
+rm -rf $lsp_root/.tmp

@@ -1,0 +1,44 @@
+#!bin/bash
+
+nvim_init=~/.config/nvim/init.vim
+nvim_ft=~/.config/nvim/after/ftplugin/
+nvim_config=~/.config/nvim/lua/config.lua
+nvim_lsp=~/.config/nvim/lua/lsp.lua
+nvim_plugins=~/.config/nvim/lua/plugins.lua
+nvim_plugin_configs=~/.config/nvim/lua/plugins/
+nvim_utils=~/.config/nvim/lua/utils.lua
+
+# Neovim
+if [ ! -f $nvim_init ] ; then
+	echo "Creating symbolic link for nvim/init.vim..."
+	mkdir -p ~/.config/nvim
+	ln -s $PWD/neovim/init.vim $nvim_init
+fi
+
+if [ ! -f $nvim_lsp ] ; then
+	echo "Creating symbolic link for nvim/lua/lsp.lua..."
+	mkdir -p ~/.config/nvim/lua
+	ln -s $PWD/neovim/lsp.lua $nvim_lsp
+fi
+
+if [ ! -f $nvim_plugins ] ; then
+	echo "Creating symbolic link for nvim/lua/plugins.lua..."
+	mkdir -p ~/.config/nvim/lua
+	ln -s $PWD/neovim/plugins.lua $nvim_plugins
+fi
+
+if [[ $(ls $nvim_plugin_configs | wc -l) != $(ls $PWD/neovim/plugins | wc -l) ]] ; then
+	echo "Creating symbolic link for nvim plugin configs..."
+	rm -rf ~/.config/nvim/lua/plugins
+	mkdir -p ~/.config/nvim/lua/plugins
+	ln -s $PWD/neovim/plugins/* $nvim_plugin_configs
+fi
+
+
+
+if [[ $(ls $nvim_ft | wc -l) != $(ls $PWD/neovim/ftplugin | wc -l) ]] ; then
+	echo "Creating symbolic link for nvim filetypes..."
+	rm -rf ~/.config/nvim/after/ftplugin
+	mkdir -p ~/.config/nvim/after/ftplugin
+	ln -s $PWD/neovim/ftplugin/* $nvim_ft
+fi
