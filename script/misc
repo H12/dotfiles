@@ -2,6 +2,7 @@
 
 bat=~/.config/bat/config
 hammerspoon=~/.hammerspoon/init.lua
+kitty=~/.config/kitty/kitty.conf
 tmux_conf=~/.tmux.conf
 
 # BAT
@@ -14,6 +15,13 @@ fi
 if [ ! -f $hammerspoon ] ; then
 	echo "Creating symbolic link for Hammerspoon config..."
 	ln -s $PWD/hammerspoon/init.lua $hammerspoon
+fi
+
+# Kitty
+if [ ! -f $kitty ] ; then
+	echo "Creating symbolic link for kitty config..."
+	mkdir -p ~/.config/kitty
+	ln -s $PWD/kitty/kitty.conf $kitty
 fi
 
 # Tmux
