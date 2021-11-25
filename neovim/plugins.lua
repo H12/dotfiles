@@ -1,5 +1,6 @@
 require('plugins/coq_nvim')
 require('plugins/gitsigns')
+require('plugins/gruvbox')
 require('plugins/lualine')
 require('plugins/nvim-tree')
 require('plugins/telescope')
@@ -7,9 +8,6 @@ require('plugins/telescope')
 return require('packer').startup(function()
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
-
-	-- Gruvbox baby
-	use 'gruvbox-community/gruvbox'
 
 	-- Syntax highlighting
 	use 'sheerun/vim-polyglot'
@@ -20,6 +18,11 @@ return require('packer').startup(function()
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
+	}
+
+	-- Gruvbox Material
+	use {
+		'sainnhe/gruvbox-material'
 	}
 
 	-- Telescope and deps

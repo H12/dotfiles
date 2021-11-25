@@ -4,30 +4,11 @@ syntax on
 " Turn on termguicolors
 set termguicolors
 
-" Gruvbox baby
-colorscheme gruvbox
-
-hi GruvboxRedSign        ctermfg=167 ctermbg=none guibg=none
-hi GruvboxGreenSign      ctermfg=142 ctermbg=none guibg=none
-hi GruvboxYellowSign     ctermfg=214 ctermbg=none guibg=none
-hi GruvboxBlueSign       ctermfg=109 ctermbg=none guibg=none
-hi GruvboxPurpleSign     ctermfg=175 ctermbg=none guibg=none
-hi GruvboxAquaSign       ctermfg=108 ctermbg=none guibg=none
-hi GruvboxOrangeSign     ctermfg=208 ctermbg=none guibg=none
-
 " Make the background transparent
 hi Normal ctermbg=none guibg=none
 
 " Don't highlight markdown errors
 hi markdownError guifg=None guibg=None
-
-" Speedy Stylish GitGutter
-set updatetime=100
-
-hi link GitGutterAdd GruvboxGreenSign
-hi link GitGutterChange GruvboxYellowSign
-hi link GitGutterDelete GruvboxRedSign
-hi link GitGutterChangeDelete GruvboxOrangeSign
 
 " Pane navigation respecting tmux
 let g:tmux_navigator_no_mappings = 1
@@ -53,7 +34,7 @@ hi SignColumn guibg=none
 set mouse=a
 set scrolloff=8
 
-" Search preferences
+" Highlight search incrementally
 set incsearch
 
 " Pretty Terminal Commands
