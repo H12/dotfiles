@@ -16,6 +16,12 @@ return require('packer').startup(function()
 	use 'elixir-editors/vim-elixir'
 	use 'gleam-lang/gleam.vim'
 
+	-- TreeSitter
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate'
+	}
+
 	-- Telescope and deps
 	use {
 		'nvim-telescope/telescope.nvim',
