@@ -4,9 +4,6 @@ syntax on
 " Turn on termguicolors
 set termguicolors
 
-" Make the background transparent
-hi Normal ctermbg=none guibg=none
-
 " Don't highlight markdown errors
 hi markdownError guifg=None guibg=None
 
@@ -24,11 +21,8 @@ nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 set number
 set relativenumber
 
-hi CursorLineNR guibg=none
-
-" Transparent SignColumn
+" Persist SignColumn
 set signcolumn=yes
-hi SignColumn guibg=none
 
 " Mouse settings
 set mouse=a
