@@ -11,17 +11,6 @@ vim.api.nvim_set_keymap('n',
 
 require('telescope').setup({
 	defaults = {
-		file_sorter =  require'telescope.sorters'.get_fzy_sorter,
-		vimgrep_arguments = {
-			'rg',
-			'--color=never',
-			'--no-heading',
-			'--with-filename',
-			'--line-number',
-			'--column',
-			'--smart-case',
-			'--hidden'
-		},
 		layout_strategy = 'flex',
 		layout_config = {
 			flex = {
