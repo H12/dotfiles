@@ -34,8 +34,6 @@ if [[ $(ls $nvim_plugin_configs | wc -l) != $(ls $PWD/neovim/plugins | wc -l) ]]
 	ln -s $PWD/neovim/plugins/* $nvim_plugin_configs
 fi
 
-
-
 if [[ $(ls $nvim_ft | wc -l) != $(ls $PWD/neovim/ftplugin | wc -l) ]] ; then
 	echo "Creating symbolic link for nvim filetypes..."
 	rm -rf ~/.config/nvim/after/ftplugin

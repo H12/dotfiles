@@ -1,0 +1,13 @@
+#!bin/bash
+
+ranger_config=~/.config/ranger/rc.conf
+
+# Install ranger & deps with pip3
+pip3 install ranger-fm pynvim
+
+# Symlink ranger config
+if [ ! -f $ranger_config ] ; then
+	echo "Creating symbolic link for ranger config..."
+	mkdir -p ~/.config/ranger
+	ln -s $PWD/ranger/rc.conf $ranger_config
+fi

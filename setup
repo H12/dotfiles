@@ -5,4 +5,5 @@ source ./script/homebrew
 source ./script/lsp
 source ./script/fish
 source ./script/nvim
+source ./script/ranger
 source ./script/misc

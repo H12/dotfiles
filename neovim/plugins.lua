@@ -2,7 +2,7 @@ require('plugins/coq_nvim')
 require('plugins/gitsigns')
 require('plugins/gruvbox')
 require('plugins/lualine')
-require('plugins/nvim-tree')
+require('plugins/rnvimr')
 require('plugins/telescope')
 
 return require('packer').startup(function()
@@ -31,17 +31,14 @@ return require('packer').startup(function()
 		requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
 	}
 
+	-- Rnvimr for Ranger inside of vim
+	use 'kevinhwang91/rnvimr'
+
 	-- Statusline
 	use 'itchyny/vim-gitbranch'
 	use {
 		'hoob3rt/lualine.nvim',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
-	}
-
-	-- Nvim tree
-	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = 'kyazdani42/nvim-web-devicons'
 	}
 
 	-- Language Server Protocol
