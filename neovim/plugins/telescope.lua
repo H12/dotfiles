@@ -1,12 +1,12 @@
 -- Telescope deps and config
 vim.api.nvim_set_keymap('n',
 	'<C-p>',
-	':Telescope find_files find_command=ag,-l<cr>',
+	':Telescope find_files find_command=ag,-l,--hidden<cr>',
 	{ noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n',
 	'<C-f>',
-	':Telescope live_grep find_command=ag,--vimgrep<cr>',
+	':Telescope live_grep<cr>',
 	{ noremap = true, silent = true })
 
 require('telescope').setup({
@@ -19,6 +19,11 @@ require('telescope').setup({
 					preview_width = 0.58,
 				},
 			},
+		},
+		vimgrep_arguments = {
+			'ag',
+			'--hidden',
+			'--vimgrep',
 		},
 	},
 })
