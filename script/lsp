@@ -1,15 +1,26 @@
 #!/bin/bash
 
 lsp_root=~/.config/lsp
+
+
+####################
+####   ELIXIR   ####
+####################
+
 elixir_ls_dir=$lsp_root/elixir-ls
+
+erlang_ver=24.0.6
+elixir_ver=1.12.3-otp-24
 
 # asdf-erlang
 asdf plugin-add erlang
-asdf install erlang 24.0.6
+asdf install erlang $erlang_ver
+asdf global erlang $erlang_ver
 
 # asdf-elixir
 asdf plugin-add elixir
-asdf install elixir 1.12.3-otp-24
+asdf install elixir $elixir_ver
+asdf global elixir $elixir_ver
 
 # elixir-ls
 echo "Fetching elixir-ls repo..."
@@ -19,6 +30,30 @@ echo "Installing elixir-ls..."
 (cd $lsp_root/.tmp/elixir-ls && mix deps.get &> /dev/null)
 (cd $lsp_root/.tmp/elixir-ls && mix deps.compile &> /dev/null)
 (cd $lsp_root/.tmp/elixir-ls && mix elixir_ls.release -o $elixir_ls_dir &> /dev/null)
+
+
+####################
+####   GOLANG   ####
+####################
+
+golang_ver=1.17.3
+
+# asdf-golang
+asdf plugin-add golang
+asdf install golang $golang_ver
+asdf global golang $golang_ver
+
+# gopls
+echo "Installing gopls..."
+go install golang.org/x/tools/gopls@latest
+
+
+#####################
+####   CLEANUP   ####
+#####################
+
+echo "Reshimming asdf binaries..."
+asdf reshim
 
 echo "Removing temporary files..."
 rm -rf $lsp_root/.tmp

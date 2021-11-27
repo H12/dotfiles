@@ -28,8 +28,6 @@ function on_attach(client, bufnr)
 	buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
--- Uncomment individual configs only once corresponding LS is installed
-
 -- ElixirLS
 lsp.elixirls.setup(coq.lsp_ensure_capabilities{
 	cmd = { "/Users/henryfirth/.config/lsp/elixir-ls/language_server.sh" };
@@ -39,22 +37,7 @@ lsp.elixirls.setup(coq.lsp_ensure_capabilities{
 	};
 })
 
--- -- elmls
--- lsp.elmls.setup{
--- 	on_attach = u.on_attach;
--- }
-
--- -- tsserver
--- lsp.tsserver.setup{
--- 	on_attach = u.on_attach;
--- }
-
--- -- gopls
--- lsp.gopls.setup{
--- 	on_attach = u.on_attach;
--- }
-
--- -- rust-analyzer
--- lsp.rust_analyzer.setup{
--- 	on_attach = u.on_attach;
--- }
+-- gopls
+lsp.gopls.setup{
+	on_attach = on_attach;
+}
