@@ -27,11 +27,19 @@ if [ ! -f $nvim_plugins ] ; then
 	ln -s $PWD/neovim/plugins.lua $nvim_plugins
 fi
 
+if [ ! -f $nvim_plugin_configs ] ; then
+	mkdir -p ~/.config/nvim/lua/plugins
+fi
+
 if [[ $(ls $nvim_plugin_configs | wc -l) != $(ls $PWD/neovim/plugins | wc -l) ]] ; then
 	echo "Creating symbolic link for nvim plugin configs..."
 	rm -rf ~/.config/nvim/lua/plugins
 	mkdir -p ~/.config/nvim/lua/plugins
 	ln -s $PWD/neovim/plugins/* $nvim_plugin_configs
+fi
+
+if [ ! -f $nvim_ft ] ; then
+	mkdir -p ~/.config/nvim/after/ftplugin
 fi
 
 if [[ $(ls $nvim_ft | wc -l) != $(ls $PWD/neovim/ftplugin | wc -l) ]] ; then
