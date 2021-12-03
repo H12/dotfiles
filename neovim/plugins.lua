@@ -1,6 +1,7 @@
 require('plugins/coq_nvim')
 require('plugins/gitsigns')
 require('plugins/gruvbox')
+require('plugins/indent_blankline')
 require('plugins/lualine')
 require('plugins/rnvimr')
 require('plugins/telescope')
@@ -40,6 +41,9 @@ return require('packer').startup(function()
 		'hoob3rt/lualine.nvim',
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
+
+	-- Tab highlighting
+	use "lukas-reineke/indent-blankline.nvim"
 
 	-- Language Server Protocol
 	-- See lsp.lua for server-specific config
