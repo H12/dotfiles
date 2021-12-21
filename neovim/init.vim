@@ -17,6 +17,9 @@ nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 
+" Prevent line wrapping
+set nowrap
+
 " Relative line numbers
 set number
 set relativenumber
