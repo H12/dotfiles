@@ -8,7 +8,7 @@ require('lualine').setup({
 		lualine_c = {
 			'filename',
 			'diff',
-			{'diagnostics', sources={'nvim_lsp'}}
+			{'diagnostics', sources={'nvim_diagnostic'}}
 		},
 		lualine_x = {'encoding', 'filetype'},
 		lualine_y = {'progress', 'location'},
