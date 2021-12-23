@@ -1,4 +1,6 @@
 -- Telescope deps and config
+vim.cmd('hi link TelescopeBorder White')
+
 vim.api.nvim_set_keymap('n',
 	'<C-p>',
 	':Telescope find_files find_command=ag,-l,--hidden<cr>',
