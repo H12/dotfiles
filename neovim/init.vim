@@ -35,7 +35,7 @@ set scrolloff=8
 set incsearch
 
 " Pretty Terminal Commands
-command -nargs=+ T :bot 20sp term://<args>
+command -nargs=+ T FloatermNew <args>
 
 " Quickly Exit Terminal Mode
 tnoremap <ESC> <C-\><C-N>
@@ -47,3 +47,6 @@ xnoremap <silent> ii ^o$h
 " Include lua config
 lua require('plugins')
 lua require('lsp')
+
+" Highlight Floaterm After `require`
+hi link FloatermBorder White

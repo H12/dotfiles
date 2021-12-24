@@ -1,9 +1,9 @@
 require('plugins/coq_nvim')
+require('plugins/floaterm')
 require('plugins/gitsigns')
 require('plugins/gruvbox')
 require('plugins/indent_blankline')
 require('plugins/lualine')
-require('plugins/rnvimr')
 require('plugins/telescope')
 
 return require('packer').startup(function()
@@ -22,18 +22,16 @@ return require('packer').startup(function()
 	}
 
 	-- Gruvbox Material
-	use {
-		'sainnhe/gruvbox-material'
-	}
+	use 'sainnhe/gruvbox-material'
+
+	-- Float-Term
+	use 'voldikss/vim-floaterm'
 
 	-- Telescope and deps
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
 	}
-
-	-- Rnvimr for Ranger inside of vim
-	use 'kevinhwang91/rnvimr'
 
 	-- Statusline
 	use 'itchyny/vim-gitbranch'
