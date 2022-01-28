@@ -40,6 +40,12 @@ return require('packer').startup(function()
 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
 
+	-- Breadcrumbs for statusline
+	use {
+		"SmiteshP/nvim-gps",
+		requires = "nvim-treesitter/nvim-treesitter"
+	}
+
 	-- Tab highlighting
 	use "lukas-reineke/indent-blankline.nvim"
 
