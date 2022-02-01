@@ -1,6 +1,7 @@
 #!/bin/bash
 
 lsp_root=~/.config/lsp
+mkdir $lsp_root/.tmp
 
 
 ####################
@@ -8,9 +9,12 @@ lsp_root=~/.config/lsp
 ####################
 
 elixir_ls_dir=$lsp_root/elixir-ls
+elixir_ls_ver=0.9.0
 
-erlang_ver=24.0.6
-elixir_ver=1.12.3-otp-24
+erlang_ver=24.2.1
+elixir_ver=1.13.2-otp-24
+
+echo "Installing elixir..."
 
 # asdf-erlang
 asdf plugin-add erlang
@@ -23,22 +27,20 @@ asdf install elixir $elixir_ver
 asdf global elixir $elixir_ver
 
 # elixir-ls
-echo "Fetching elixir-ls repo..."
-git clone https://github.com/elixir-lsp/elixir-ls.git $lsp_root/.tmp/elixir-ls &> /dev/null
+echo "Downloading elixir-ls release..."
+curl -L https://github.com/elixir-lsp/elixir-ls/releases/download/v$elixir_ls_ver/elixir-ls.zip -o $lsp_root/.tmp/elixir-ls.zip &> /dev/null
 
-echo "Installing elixir-ls..."
-(cd $lsp_root/.tmp/elixir-ls && mix deps.get &> /dev/null)
-(cd $lsp_root/.tmp/elixir-ls && mix deps.compile &> /dev/null)
-(cd $lsp_root/.tmp/elixir-ls && mix elixir_ls.release -o $elixir_ls_dir &> /dev/null)
-
+echo "Unzipping elixir-ls release into proper directory..."
+unzip -o $lsp_root/.tmp/elixir-ls.zip -d $lsp_root/elixir-ls/ &> /dev/null
 
 ####################
 ####   GOLANG   ####
 ####################
 
-golang_ver=1.17.3
+golang_ver=1.17.6
 
 # asdf-golang
+echo "Installing golang..."
 asdf plugin-add golang
 asdf install golang $golang_ver
 asdf global golang $golang_ver

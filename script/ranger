@@ -3,7 +3,7 @@
 ranger_config=~/.config/ranger/rc.conf
 
 # Install ranger & deps with pip3
-pip3 install ranger-fm pynvim
+pip3 install ranger-fm pynvim &> /dev/null
 
 # Symlink ranger config
 if [ ! -f $ranger_config ] ; then
