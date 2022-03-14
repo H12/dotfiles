@@ -37,6 +37,11 @@ lsp.elixirls.setup(coq.lsp_ensure_capabilities{
 	};
 })
 
+-- elmls
+lsp.elmls.setup{
+	on_attach = on_attach;
+}
+
 -- gopls
 lsp.gopls.setup{
 	on_attach = on_attach;
