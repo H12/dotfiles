@@ -28,5 +28,10 @@ function tldr
 	curl -s cht.sh/$argv | less -R
 end
 
+# Set up peco
+function fish_user_key_bindings
+  bind \cr 'peco_select_history (commandline -b)'
+end
+
 # Bind CTRL+e to editor
 bind \co edit_command_buffer

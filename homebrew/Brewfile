@@ -18,6 +18,7 @@ brew "the_silver_searcher"
 brew "bat"
 brew "glow"
 brew "fish"
+brew "peco"
 
 # Casks
 cask "hammerspoon"
