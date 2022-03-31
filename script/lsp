@@ -3,6 +3,21 @@
 lsp_root=~/.config/lsp
 mkdir $lsp_root/.tmp
 
+####################
+####   NODEJS   ####
+####################
+
+nodejs_ver=lts
+
+asdf plugin-add nodejs
+asdf install nodejs $nodejs_ver
+asdf global nodejs $nodejs_ver
+
+# jsonls
+npm i -g vscode-langservers-extracted
+
+# tailwindcss-ls
+npm i -g @tailwindcss/language-server
 
 ####################
 ####   ELIXIR   ####

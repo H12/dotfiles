@@ -37,6 +37,12 @@ lsp.elixirls.setup(coq.lsp_ensure_capabilities{
 	};
 })
 
+-- jsonls
+lsp.jsonls.setup{
+	on_attach = on_attach;
+}
+
+
 -- Tailwind CSS LS
 lsp.tailwindcss.setup{
 	on_attach = on_attach;
