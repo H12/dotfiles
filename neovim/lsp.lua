@@ -47,7 +47,6 @@ lsp.jsonls.setup{
 	on_attach = on_attach;
 }
 
-
 -- Tailwind CSS LS
 lsp.tailwindcss.setup{
 	on_attach = on_attach;
