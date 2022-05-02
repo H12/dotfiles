@@ -1,6 +1,6 @@
 hs.window.animationDuration = 0 -- disable animations
 
-local defaultPadding = 12
+local defaultPadding = 8
 local defaultMash  = { 'ctrl', 'alt', 'cmd' }
 
 function move(x, y, w, h, p)
