@@ -37,6 +37,11 @@ lsp.elixirls.setup(coq.lsp_ensure_capabilities{
 	};
 })
 
+-- pyright
+lsp.pyright.setup{
+	on_attach = on_attach;
+}
+
 -- jsonls
 lsp.jsonls.setup{
 	on_attach = on_attach;
