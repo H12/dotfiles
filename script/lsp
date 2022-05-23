@@ -26,8 +26,8 @@ npm i -g @tailwindcss/language-server
 elixir_ls_dir=$lsp_root/elixir-ls
 elixir_ls_ver=0.9.0
 
-erlang_ver=24.2.2
-elixir_ver=1.13.4-otp-24
+erlang_ver=25.0
+elixir_ver=1.13.4-otp-25
 
 echo "Installing elixir..."
 

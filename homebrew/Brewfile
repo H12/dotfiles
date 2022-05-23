@@ -1,6 +1,8 @@
 # asdf Erlang dependencies
 brew "openssl"
 brew "autoconf"
+brew "fop"
+brew "libxslt"
 brew "wxmac"
 
 # asdf NodeJS dependencies
