@@ -8,10 +8,9 @@ brew "coreutils"
 brew "gpg"
 
 # Vim dependencies
-brew "vim"
+brew "neovim", args: ["HEAD"]
 brew "tree-sitter", args: ["HEAD"]
 brew "luajit", args: ["HEAD"]
-brew "neovim", args: ["HEAD"]
 brew "the_silver_searcher"
 
 # Miscellaneous goodies
