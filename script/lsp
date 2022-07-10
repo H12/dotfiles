@@ -26,15 +26,18 @@ npm i -g @tailwindcss/language-server
 elixir_ls_dir=$lsp_root/elixir-ls
 elixir_ls_ver=0.9.0
 
-erlang_ver=25.0
+erlang_ver=25.0.2
 elixir_ver=1.13.4-otp-25
 
-echo "Installing elixir..."
+echo "Installing erlang..."
 
 # asdf-erlang
+export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=$(brew --prefix openssl@1.1)"
 asdf plugin-add erlang
 asdf install erlang $erlang_ver
 asdf global erlang $erlang_ver
+
+echo "Installing elixir..."
 
 # asdf-elixir
 asdf plugin-add elixir
@@ -52,7 +55,7 @@ unzip -o $lsp_root/.tmp/elixir-ls.zip -d $lsp_root/elixir-ls/ &> /dev/null
 ####   GOLANG   ####
 ####################
 
-golang_ver=1.17.6
+golang_ver=1.18.3
 
 # asdf-golang
 echo "Installing golang..."
