@@ -13,7 +13,6 @@ vim.api.nvim_set_keymap('n',
 
 require('telescope').setup({
 	defaults = {
-		borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 		layout_strategy = 'flex',
 		layout_config = {
 			flex = {

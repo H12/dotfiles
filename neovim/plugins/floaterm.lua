@@ -1,4 +1,7 @@
 -- Floaterm config and keymaps
+
+vim.api.nvim_set_var('floaterm_borderchars', '─│─│╭╮╯╰')
+
 vim.api.nvim_set_keymap('n',
 	'<C-b>',
 	':FloatermNew --autoclose=2 --opener=edit --height=0.8 --width=0.9 --title=Ranger ranger<CR>',
