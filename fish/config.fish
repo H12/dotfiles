@@ -35,3 +35,5 @@ end
 
 # Bind CTRL+e to editor
 bind \co edit_command_buffer
+
+thefuck --alias | source
