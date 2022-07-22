@@ -45,10 +45,12 @@ set scrolloff=8
 set incsearch
 
 " Pretty Terminal Commands
-command -nargs=+ T FloatermNew <args>
+command -nargs=+ T FloatermNew --autoclose=0 --height=0.9 --width=0.9 --title=Command <args>
 
-" Quickly Exit Terminal Mode
-tnoremap <ESC> <C-\><C-N>
+" Set up default floaterm terminal for fast toggling
+augroup term_setup
+	autocmd VimEnter * FloatermNew --silent --height=0.7 --width=0.6 --title=Terminal --name=default
+augroup END
 
 " Add a 'line' text object mapped to `ii`
 onoremap <silent> ii :<c-u>normal! v^o$h<cr>

@@ -4,20 +4,15 @@ vim.api.nvim_set_var('floaterm_borderchars', '─│─│╭╮╯╰')
 
 vim.api.nvim_set_keymap('n',
 	'<C-b>',
-	':FloatermNew --autoclose=2 --opener=edit --height=0.8 --width=0.9 --title=Ranger ranger<CR>',
+	':FloatermNew --autoclose=2 --opener=edit --height=0.9 --width=0.8 --title=Ranger --name=ranger ranger<CR>',
 	{ noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n',
 	'<C-t>',
-	':FloatermNew --height=0.7 --width=0.6 --title=Terminal<CR>',
-	{ noremap = true, silent = true })
-
-vim.api.nvim_set_keymap('n',
-	'<C-k>',
-	'<C-\\><C-n>:FloatermKill<CR>',
+	':FloatermToggle default<CR>',
 	{ noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('t',
-	'<Esc>',
-	'<C-\\><C-n>:FloatermKill<CR>',
+	'<C-t>',
+	'<C-\\><C-n>:FloatermToggle default<CR>',
 	{ noremap = true, silent = true })
