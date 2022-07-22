@@ -20,6 +20,7 @@ brew "bat"
 brew "glow"
 brew "fish"
 brew "peco"
+brew "pillow"
 
 # Casks
 cask "hammerspoon"
