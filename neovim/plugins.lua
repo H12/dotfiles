@@ -1,7 +1,7 @@
 require('plugins/coq_nvim')
 require('plugins/floaterm')
 require('plugins/gitsigns')
-require('plugins/gruvbox')
+require('plugins/colorscheme')
 require('plugins/indent_blankline')
 require('plugins/lualine')
 require('plugins/telescope')
@@ -23,6 +23,9 @@ return require('packer').startup(function()
 
 	-- Gruvbox Material
 	use 'sainnhe/gruvbox-material'
+
+	-- Nord
+	use 'shaunsingh/nord.nvim'
 
 	-- Float-Term
 	use 'voldikss/vim-floaterm'

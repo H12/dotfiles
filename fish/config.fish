@@ -36,4 +36,9 @@ end
 # Bind CTRL+e to editor
 bind \co edit_command_buffer
 
+# Fuck
 thefuck --alias | source
+
+# Colorscheme setting
+set -g theme_color_scheme nord
+set -g theme_display_git_default_branch yes

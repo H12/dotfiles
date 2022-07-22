@@ -1,5 +1,5 @@
-# Set the theme to Gruvbox
---theme="gruvbox-dark"
+# Set the theme to Nord
+--theme="Nord"
 
 # Show line numbers, Git modifications and file header (but no grid)
 --style="changes"

@@ -4,7 +4,7 @@ gps.setup()
 
 require('lualine').setup({
 	options = {
-		theme = 'gruvbox-material'
+		theme = 'nord'
 	},
 	sections = {
 		lualine_a = {},
