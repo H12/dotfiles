@@ -56,7 +56,7 @@ unzip -o $lsp_root/.tmp/elixir-ls.zip -d $lsp_root/elixir-ls/ &> /dev/null
 ####   GOLANG   ####
 ####################
 
-golang_ver=1.18.3
+golang_ver=1.19
 
 # asdf-golang
 echo "Installing golang..."
