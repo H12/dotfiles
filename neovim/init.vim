@@ -8,6 +8,9 @@ syntax on
 " Turn on termguicolors
 set termguicolors
 
+" Turn off startup message
+set shortmess=I
+
 " Don't highlight markdown errors
 hi markdownError guifg=None guibg=None
 
