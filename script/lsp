@@ -23,11 +23,12 @@ npm i -g @tailwindcss/language-server
 ####   ELIXIR   ####
 ####################
 
-elixir_ls_dir=$lsp_root/elixir-ls
-elixir_ls_ver=0.9.0
-
-erlang_ver=25.0.2
+erlang_ver=25.0.4
 elixir_ver=1.13.4-otp-25
+
+elixir_ls_dir=$lsp_root/elixir-ls
+elixir_ls_ver=0.11.0
+elixir_ls_dbl=1.13-25.0
 
 echo "Installing erlang..."
 
@@ -46,7 +47,7 @@ asdf global elixir $elixir_ver
 
 # elixir-ls
 echo "Downloading elixir-ls release..."
-curl -L https://github.com/elixir-lsp/elixir-ls/releases/download/v$elixir_ls_ver/elixir-ls.zip -o $lsp_root/.tmp/elixir-ls.zip &> /dev/null
+curl -L https://github.com/elixir-lsp/elixir-ls/releases/download/v$elixir_ls_ver/elixir-ls-$elixir_ls_dbl.zip -o $lsp_root/.tmp/elixir-ls.zip &> /dev/null
 
 echo "Unzipping elixir-ls release into proper directory..."
 unzip -o $lsp_root/.tmp/elixir-ls.zip -d $lsp_root/elixir-ls/ &> /dev/null
