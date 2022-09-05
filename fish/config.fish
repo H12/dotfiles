@@ -21,7 +21,11 @@ set -gx ERL_AFLAGS "-kernel shell_history enabled"
 source ~/.asdf/asdf.fish
 
 # Make python point to python3
-alias python=python3
+alias python "python3"
+
+# Extra git aliases
+alias gpo "gh pr checkout"
+alias gpu "git push -u && gh pr create --web"
 
 # Add tldr function
 function tldr
