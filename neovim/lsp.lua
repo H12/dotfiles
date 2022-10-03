@@ -55,9 +55,9 @@ lsp.jsonls.setup{
 }
 
 -- Tailwind CSS LS
-lsp.tailwindcss.setup{
+lsp.tailwindcss.setup(coq.lsp_ensure_capabilities{
 	on_attach = on_attach;
-}
+})
 
 -- elmls
 lsp.elmls.setup{
@@ -65,9 +65,9 @@ lsp.elmls.setup{
 }
 
 -- gopls
-lsp.gopls.setup{
+lsp.gopls.setup(coq.lsp_ensure_capabilities{
 	on_attach = on_attach;
-}
+})
 
 -- clangd
 lsp.clangd.setup{

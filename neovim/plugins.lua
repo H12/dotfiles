@@ -61,6 +61,7 @@ return require('packer').startup(function()
 	-- Autocompletion
 	use 'ms-jpq/coq-nvim'
 	use 'ms-jpq/coq.artifacts'
+	use { 'ms-jpq/coq.thirdparty', branch = '3p' }
 
 	-- Git signs
 	use {
