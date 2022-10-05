@@ -1,4 +1,10 @@
-vim.api.nvim_set_var('nord_borders', true)
-vim.api.nvim_set_var('nord_disable_background', true)
+require("tokyonight").setup({
+  style = "night",
+  transparent = true,
+  styles = {
+    sidebars = "transparent",
+    floats = "transparent",
+  },
+})
 
-vim.cmd("colorscheme nord")
+vim.cmd("colorscheme tokyonight-night")
