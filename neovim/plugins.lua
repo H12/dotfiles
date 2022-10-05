@@ -42,6 +42,9 @@ return require('packer').startup(function()
 	-- Solarized
 	use 'ishan9299/nvim-solarized-lua'
 
+	-- Tokyo Night
+	use 'folke/tokyonight.nvim'
+
 	-- Float-Term
 	use 'voldikss/vim-floaterm'
 
