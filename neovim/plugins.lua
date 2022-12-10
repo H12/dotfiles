@@ -12,8 +12,6 @@ return require('packer').startup(function()
 
 	-- Syntax highlighting
 	use 'sheerun/vim-polyglot'
-	use 'elixir-editors/vim-elixir'
-	use 'gleam-lang/gleam.vim'
 
 	-- Extra text objects
 	use 'kana/vim-textobj-user'
