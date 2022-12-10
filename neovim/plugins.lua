@@ -25,30 +25,6 @@ return require('packer').startup(function()
 		run = ':TSUpdate'
 	}
 
-	-- Dracula
-	use 'Mofiqul/dracula.nvim'
-
-	-- Everforest
-	use 'sainnhe/everforest'
-
-	-- Gruvbox Baby
-	use 'luisiacc/gruvbox-baby'
-
-	-- Gruvbox Material
-	use 'sainnhe/gruvbox-material'
-
-	-- Github Theme
-	use 'projekt0n/github-nvim-theme'
-
-	-- Nord
-	use 'shaunsingh/nord.nvim'
-
-	-- Solarized
-	use 'ishan9299/nvim-solarized-lua'
-
-	-- Tokyo Night
-	use 'folke/tokyonight.nvim'
-
 	-- Float-Term
 	use 'voldikss/vim-floaterm'
 
@@ -107,4 +83,30 @@ return require('packer').startup(function()
 
 	-- Tmux stuffs
 	use 'christoomey/vim-tmux-navigator'
+
+	-- THEMES --
+
+	-- Dracula
+	use 'Mofiqul/dracula.nvim'
+
+	-- Everforest
+	use 'sainnhe/everforest'
+
+	-- Gruvbox Baby
+	use 'luisiacc/gruvbox-baby'
+
+	-- Gruvbox Material
+	use 'sainnhe/gruvbox-material'
+
+	-- Github Theme
+	use 'projekt0n/github-nvim-theme'
+
+	-- Nord
+	use 'shaunsingh/nord.nvim'
+
+	-- Solarized
+	use 'ishan9299/nvim-solarized-lua'
+
+	-- Tokyo Night
+	use 'folke/tokyonight.nvim'
 end)
