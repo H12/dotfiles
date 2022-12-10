@@ -15,6 +15,10 @@ return require('packer').startup(function()
 	use 'elixir-editors/vim-elixir'
 	use 'gleam-lang/gleam.vim'
 
+	-- Extra text objects
+	use 'kana/vim-textobj-user'
+	use 'andyl/vim-textobj-elixir'
+
 	-- TreeSitter
 	use {
 		'nvim-treesitter/nvim-treesitter',
