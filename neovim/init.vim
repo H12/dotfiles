@@ -59,5 +59,9 @@ augroup END
 onoremap <silent> ii :<c-u>normal! v^o$h<cr>
 xnoremap <silent> ii ^o$h
 
+" Add remap for vertical nav
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
 " Turn on completion
 set completeopt=menu,menuone,noselect
