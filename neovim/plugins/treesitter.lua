@@ -1,6 +1,30 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "elixir", "lua", "go" },
-  highlight = {
-    enable = true,
-  },
+	ensure_installed = {
+		"bash",
+		"c",
+		"css",
+		"dockerfile",
+		"eex",
+		"elixir",
+		"elm",
+		"fish",
+		"gitignore",
+		"gleam",
+		"go",
+		"heex",
+		"html",
+		"json",
+		"lua",
+		"markdown",
+		"scss",
+		"sql",
+		"svelte",
+		"toml",
+		"vim",
+		"yaml",
+	},
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	}
 }
