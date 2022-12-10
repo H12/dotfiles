@@ -1,5 +1,5 @@
 local lsp = require('lspconfig')
-local coq = require('coq')
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
@@ -32,44 +32,57 @@ function on_attach(client, bufnr)
 	buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 	buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 	buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-	buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+	buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.format({ async = true})<CR>", opts)
 end
 
 -- ElixirLS
-lsp.elixirls.setup(coq.lsp_ensure_capabilities{
+lsp.elixirls.setup{
+	capabilities = capabilities;
 	cmd = { "/Users/henryfirth/.config/lsp/elixir-ls/language_server.sh" };
 	on_attach = on_attach;
-	settings = {
+	settings =  {
 		elixirLS = {};
 	};
-})
+}
 
 -- pyright
 lsp.pyright.setup{
+	capabilities = capabilities;
 	on_attach = on_attach;
 }
 
 -- jsonls
 lsp.jsonls.setup{
+	capabilities = capabilities;
 	on_attach = on_attach;
 }
 
 -- Tailwind CSS LS
-lsp.tailwindcss.setup(coq.lsp_ensure_capabilities{
+lsp.tailwindcss.setup{
+	capabilities = capabilities;
 	on_attach = on_attach;
-})
+}
 
 -- elmls
 lsp.elmls.setup{
+	capabilities = capabilities;
+	on_attach = on_attach;
+}
+
+-- Svelte
+lsp.svelte.setup{
+	capabilities = capabilities;
 	on_attach = on_attach;
 }
 
 -- gopls
-lsp.gopls.setup(coq.lsp_ensure_capabilities{
+lsp.gopls.setup{
+	capabilities = capabilities;
 	on_attach = on_attach;
-})
+}
 
 -- clangd
 lsp.clangd.setup{
+	capabilities = capabilities;
 	on_attach = on_attach;
 }

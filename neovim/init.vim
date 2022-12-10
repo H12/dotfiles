@@ -58,3 +58,6 @@ augroup END
 " Add a 'line' text object mapped to `ii`
 onoremap <silent> ii :<c-u>normal! v^o$h<cr>
 xnoremap <silent> ii ^o$h
+
+" Turn on completion
+set completeopt=menu,menuone,noselect

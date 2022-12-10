@@ -1,9 +1,9 @@
-require('plugins/coq_nvim')
 require('plugins/floaterm')
 require('plugins/gitsigns')
 require('plugins/colorscheme')
 require('plugins/indent_blankline')
 require('plugins/lualine')
+require('plugins/nvim-cmp')
 require('plugins/telescope')
 
 return require('packer').startup(function()
@@ -76,10 +76,16 @@ return require('packer').startup(function()
 	-- See lsp.lua for server-specific config
 	use 'neovim/nvim-lspconfig'
 
-	-- Autocompletion
-	use 'ms-jpq/coq-nvim'
-	use 'ms-jpq/coq.artifacts'
-	use { 'ms-jpq/coq.thirdparty', branch = '3p' }
+	-- Completion
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/nvim-cmp'
+
+	-- Snippets
+	use 'hrsh7th/vim-vsnip'
+	use 'hrsh7th/vim-vsnip-integ'
 
 	-- Git signs
 	use {
