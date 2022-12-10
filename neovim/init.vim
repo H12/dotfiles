@@ -14,9 +14,6 @@ set shortmess=I
 " Don't highlight markdown errors
 hi markdownError guifg=None guibg=None
 
-" Highlight Floaterm
-hi link FloatermBorder White
-
 " Pane navigation respecting tmux
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 2

@@ -1,7 +1,7 @@
 -- Floaterm config and keymaps
 
 vim.api.nvim_set_var('floaterm_borderchars', '─│─│╭╮╯╰')
-vim.cmd('hi FloatermBorder guifg=#3d59a1')
+vim.cmd('hi link FloatermBorder TelescopeBorder')
 
 vim.api.nvim_set_keymap('n',
 	'<C-b>',

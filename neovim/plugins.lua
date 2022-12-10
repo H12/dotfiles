@@ -1,10 +1,10 @@
+require('plugins/telescope')
 require('plugins/floaterm')
 require('plugins/gitsigns')
 require('plugins/colorscheme')
 require('plugins/indent_blankline')
 require('plugins/lualine')
 require('plugins/nvim-cmp')
-require('plugins/telescope')
 
 return require('packer').startup(function()
 	-- Packer can manage itself
