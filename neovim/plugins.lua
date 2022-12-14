@@ -6,7 +6,7 @@ require('plugins/indent_blankline')
 require('plugins/lualine')
 require('plugins/nvim-cmp')
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
@@ -29,16 +29,16 @@ return require('packer').startup(function()
 	-- Telescope and deps
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+		requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } }
 	}
 
-	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 	-- Statusline
 	use 'itchyny/vim-gitbranch'
 	use {
 		'hoob3rt/lualine.nvim',
-		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
 
 	-- Breadcrumbs for statusline

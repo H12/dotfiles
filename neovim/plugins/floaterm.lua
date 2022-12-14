@@ -1,5 +1,4 @@
 -- Floaterm config and keymaps
-
 vim.api.nvim_set_var('floaterm_borderchars', '─│─│╭╮╯╰')
 vim.cmd('hi link FloatermBorder TelescopeBorder')
 

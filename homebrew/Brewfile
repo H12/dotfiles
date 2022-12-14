@@ -9,6 +9,9 @@ brew "fop"
 brew "coreutils"
 brew "gpg"
 
+# Lua lsp
+brew "lua-language-server"
+
 # Vim dependencies
 brew "neovim"
 brew "tree-sitter", args: ["HEAD"]

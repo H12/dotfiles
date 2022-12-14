@@ -1,10 +1,10 @@
 -- Set up nvim-cmp.
-local cmp = require'cmp'
+local cmp = require 'cmp'
 
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			vim.fn["vsnip#anonymous"](args.body)
+			vim.fn['vsnip#anonymous'](args.body)
 		end,
 	},
 	window = {
@@ -20,12 +20,9 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
-		{ name = 'vsnip' }, -- For vsnip users.
+		{ name = 'vsnip' },
 	}, {
 		{ name = 'buffer' },
 	}),
 	view = 'native'
 })
-
-
-
