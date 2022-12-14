@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
 	}
 
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	use { 'nvim-telescope/telescope-file-browser.nvim' }
 
 	use {
 		'startup-nvim/startup.nvim',
