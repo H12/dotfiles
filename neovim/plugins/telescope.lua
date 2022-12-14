@@ -16,6 +16,11 @@ vim.api.nvim_set_keymap('n',
 	':Telescope grep_string<cr>',
 	{ noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('n',
+	'<C-y>',
+	':Telescope oldfiles<cr>',
+	{ noremap = true, silent = true })
+
 vim.api.nvim_set_keymap('v',
 	'<C-g>',
 	':zy<cmd>exec \'Telescope grep_string default_text=\' . escape(@z, \' \')<cr>',
