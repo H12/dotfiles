@@ -31,8 +31,9 @@ set nowrap
 set number
 set relativenumber
 
-" Persist SignColumn
+" Persist SignColumn globally, but not locally for the greeter window
 set signcolumn=yes
+setlocal signcolumn=no
 
 " Use global statusline After `require`
 set laststatus=3

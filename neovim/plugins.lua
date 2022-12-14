@@ -5,6 +5,7 @@ require('plugins/colorscheme')
 require('plugins/indent_blankline')
 require('plugins/lualine')
 require('plugins/nvim-cmp')
+require('plugins/startup')
 
 return require('packer').startup(function(use)
 	-- Packer can manage itself
@@ -34,6 +35,11 @@ return require('packer').startup(function(use)
 
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
+	use {
+		'startup-nvim/startup.nvim',
+		requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
+	}
+
 	-- Statusline
 	use 'itchyny/vim-gitbranch'
 	use {
@@ -43,12 +49,12 @@ return require('packer').startup(function(use)
 
 	-- Breadcrumbs for statusline
 	use {
-		"SmiteshP/nvim-gps",
-		requires = "nvim-treesitter/nvim-treesitter"
+		'SmiteshP/nvim-gps',
+		requires = 'nvim-treesitter/nvim-treesitter'
 	}
 
 	-- Tab highlighting
-	use "lukas-reineke/indent-blankline.nvim"
+	use 'lukas-reineke/indent-blankline.nvim'
 
 	-- Language Server Protocol
 	-- See lsp.lua for server-specific config
