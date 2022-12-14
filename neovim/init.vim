@@ -31,8 +31,13 @@ set nowrap
 set number
 set relativenumber
 
-" Persist SignColumn globally, but not locally for the greeter window
+" Highlight current row of cursor
+set cursorline
+
+" Enable SignColumn globally
 set signcolumn=yes
+
+" Disable SignColumn locally on the greeter page
 setlocal signcolumn=no
 
 " Use global statusline After `require`
