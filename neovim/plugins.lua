@@ -11,9 +11,6 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
-	-- Syntax highlighting
-	use 'sheerun/vim-polyglot'
-
 	-- Extra text objects
 	use 'kana/vim-textobj-user'
 	use 'andyl/vim-textobj-elixir'
