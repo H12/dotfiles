@@ -1,6 +1,6 @@
 #!bin/bash
 
-nvim_init=~/.config/nvim/init.vim
+nvim_init=~/.config/nvim/init.lua
 nvim_ft=~/.config/nvim/after/ftplugin/
 nvim_config=~/.config/nvim/lua/config.lua
 nvim_lsp=~/.config/nvim/lua/lsp.lua
@@ -12,7 +12,7 @@ nvim_utils=~/.config/nvim/lua/utils.lua
 if [ ! -f $nvim_init ] ; then
 	echo "Creating symbolic link for nvim/init.vim..."
 	mkdir -p ~/.config/nvim
-	ln -s $PWD/neovim/init.vim $nvim_init
+	ln -s $PWD/neovim/init.lua $nvim_init
 fi
 
 if [ ! -f $nvim_lsp ] ; then
