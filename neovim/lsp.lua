@@ -42,7 +42,7 @@ end
 -- ElixirLS
 lsp.elixirls.setup {
 	capabilities = capabilities;
-	cmd = { '/Users/henryfirth/.config/lsp/elixir-ls/language_server.sh' };
+	cmd = { '/Users/henryfirth/.local/share/nvim/mason/bin/elixir-ls' };
 	on_attach = on_attach;
 	settings = {
 		elixirLS = {};

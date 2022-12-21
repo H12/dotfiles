@@ -2,7 +2,7 @@
 
 source ./script/asdf
 source ./script/homebrew
-source ./script/lsp
+source ./script/languages
 source ./script/fish
 source ./script/nvim
 source ./script/ranger

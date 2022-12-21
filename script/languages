@@ -1,8 +1,5 @@
 #!/bin/bash
 
-lsp_root=~/.config/lsp
-mkdir $lsp_root/.tmp
-
 ####################
 ####   NODEJS   ####
 ####################
@@ -10,14 +7,9 @@ mkdir $lsp_root/.tmp
 nodejs_ver=lts
 
 asdf plugin-add nodejs
+asdf plugin-update nodejs
 asdf install nodejs $nodejs_ver
 asdf global nodejs $nodejs_ver
-
-# jsonls
-npm i -g vscode-langservers-extracted
-
-# tailwindcss-ls
-npm i -g @tailwindcss/language-server
 
 ####################
 ####   ELIXIR   ####
@@ -25,10 +17,6 @@ npm i -g @tailwindcss/language-server
 
 erlang_ver=25.1.2
 elixir_ver=1.14.2-otp-25
-
-elixir_ls_dir=$lsp_root/elixir-ls
-elixir_ls_ver=0.12.0
-elixir_ls_dbl=1.14-25.1
 
 echo "Installing erlang..."
 
@@ -50,13 +38,6 @@ asdf plugin-update elixir
 asdf install elixir $elixir_ver
 asdf global elixir $elixir_ver
 
-# elixir-ls
-echo "Downloading elixir-ls release..."
-curl -L https://github.com/elixir-lsp/elixir-ls/releases/download/v$elixir_ls_ver/elixir-ls-$elixir_ls_dbl.zip -o $lsp_root/.tmp/elixir-ls.zip &> /dev/null
-
-echo "Unzipping elixir-ls release into proper directory..."
-unzip -o $lsp_root/.tmp/elixir-ls.zip -d $lsp_root/elixir-ls/ &> /dev/null
-
 ####################
 ####   GOLANG   ####
 ####################
@@ -69,17 +50,9 @@ asdf plugin-add golang
 asdf install golang $golang_ver
 asdf global golang $golang_ver
 
-# gopls
-echo "Installing gopls..."
-go install golang.org/x/tools/gopls@latest
-
-
 #####################
 ####   CLEANUP   ####
 #####################
 
 echo "Reshimming asdf binaries..."
 asdf reshim
-
-echo "Removing temporary files..."
-rm -rf $lsp_root/.tmp

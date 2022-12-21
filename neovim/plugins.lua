@@ -4,8 +4,10 @@ require('plugins/gitsigns')
 require('plugins/colorscheme')
 require('plugins/indent_blankline')
 require('plugins/lualine')
+require('plugins/mason')
 require('plugins/nvim-cmp')
 require('plugins/startup')
+require('plugins/treesitter')
 
 return require('packer').startup(function(use)
 	-- Packer can manage itself
@@ -21,6 +23,12 @@ return require('packer').startup(function(use)
 		run = ':TSUpdate'
 	}
 
+	-- Language Server Protocol
+	use {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	}
 	-- Float-Term
 	use 'voldikss/vim-floaterm'
 
@@ -54,10 +62,6 @@ return require('packer').startup(function(use)
 
 	-- Tab highlighting
 	use 'lukas-reineke/indent-blankline.nvim'
-
-	-- Language Server Protocol
-	-- See lsp.lua for server-specific config
-	use 'neovim/nvim-lspconfig'
 
 	-- Completion
 	use 'hrsh7th/cmp-nvim-lsp'
