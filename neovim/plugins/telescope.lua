@@ -28,7 +28,7 @@ vim.api.nvim_set_keymap('v',
 
 vim.api.nvim_set_keymap('n',
 	'<C-b>',
-	':Telescope file_browser<cr>',
+	':Telescope file_browser path="%:p:h"<cr>',
 	{ noremap = true, silent = true })
 
 require('telescope').setup({
