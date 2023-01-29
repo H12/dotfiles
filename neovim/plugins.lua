@@ -93,6 +93,9 @@ return require('packer').startup(function(use)
 
 	-- THEMES --
 
+	-- Catppuccin
+	use { "catppuccin/nvim", as = "catppuccin" }
+
 	-- Dracula
 	use 'Mofiqul/dracula.nvim'
 

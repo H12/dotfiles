@@ -1,10 +1,6 @@
-local gps = require('nvim-gps')
-
-gps.setup()
-
 require('lualine').setup({
 	options = {
-		theme = 'tokyonight'
+		theme = 'gruvbox-material'
 	},
 	sections = {
 		lualine_a = {},
