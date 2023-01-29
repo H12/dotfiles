@@ -2,18 +2,6 @@
 
 fish=~/.config/fish/config.fish
 fish_variables=~/.config/fish/fish_variables
-omf=~/.config/fish/conf.d/omf.fish
-omf_bundle=~/.config/omf/bundle
-omf_channel=~/.config/omf/channel
-omf_theme=~/.config/omf/theme
-
-# Install oh-my-fish
-if [ ! -f ~/.local/share/omf/bin/install ] ; then
-	echo "Installing OMF..."
-	curl -L https://get.oh-my.fish > install
-	fish install --noninteractive --yes --path=~/.local/share/omf --config=~/.config/omf
-	rm $PWD/install
-fi
 
 # Fish
 if [ ! -f $fish ] ; then
@@ -21,34 +9,3 @@ if [ ! -f $fish ] ; then
 	mkdir -p ~/.config/fish
 	ln -s $PWD/fish/config.fish $fish
 fi
-
-if [ ! -f $fish_variables ] ; then
-	echo "Creating symbolic link for fish variables..."
-	mkdir -p ~/.config/fish
-	ln -s $PWD/fish/fish_variables $fish_variables
-fi
-
-if [ ! -f $omf ] ; then
-	echo "Creating symbolic link for omf.fish..."
-	mkdir -p ~/.config/fish/conf.d
-	ln -s $PWD/fish/omf.fish $omf
-fi
-
-if [ ! -f $omf_bundle ] ; then
-	echo "Creating symbolic link for omf bundle..."
-	mkdir -p ~/.config/omf
-	ln -s $PWD/fish/omf/bundle $omf_bundle
-fi
-
-if [ ! -f $omf_channel ] ; then
-	echo "Creating symbolic link for omf channel..."
-	mkdir -p ~/.config/omf
-	ln -s $PWD/fish/omf/channel $omf_channel
-fi
-
-if [ ! -f $omf_theme ] ; then
-	echo "Creating symbolic link for omf theme..."
-	mkdir -p ~/.config/omf
-	ln -s $PWD/fish/omf/theme $omf_theme
-fi
-

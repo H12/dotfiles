@@ -18,10 +18,11 @@ brew "tree-sitter", args: ["HEAD"]
 brew "luajit", args: ["HEAD"]
 
 # Miscellaneous goodies
+brew "fish"
+brew "fzf"
+brew "fd"
 brew "bat"
 brew "glow"
-brew "fish"
-brew "peco"
 brew "pillow"
 
 # Casks
