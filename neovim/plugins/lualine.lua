@@ -8,7 +8,6 @@ require('lualine').setup({
 		lualine_c = {
 			'diff',
 			'filename',
-			{ gps.get_location, cond = gps.is_available },
 			{ 'diagnostics', sources = { 'nvim_diagnostic' } }
 		},
 		lualine_x = { 'encoding', 'filetype' },

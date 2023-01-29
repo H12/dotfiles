@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	}
+
 	-- Float-Term
 	use 'voldikss/vim-floaterm'
 
@@ -52,12 +53,6 @@ return require('packer').startup(function(use)
 	use {
 		'hoob3rt/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
-
-	-- Breadcrumbs for statusline
-	use {
-		'SmiteshP/nvim-gps',
-		requires = 'nvim-treesitter/nvim-treesitter'
 	}
 
 	-- Tab highlighting

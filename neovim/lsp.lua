@@ -11,7 +11,7 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
 	vim.lsp.handlers.signature_help, { border = 'rounded' }
 )
 
-function on_attach(client, bufnr)
+local function on_attach(_, bufnr)
 	local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
 	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -42,11 +42,8 @@ end
 -- ElixirLS
 lsp.elixirls.setup {
 	capabilities = capabilities;
-	cmd = { '/Users/henryfirth/.local/share/nvim/mason/bin/elixir-ls' };
+	cmd = { '/Users/henryfirth/.local/share/nvim/mason/packages/elixir-ls/language_server.sh' };
 	on_attach = on_attach;
-	settings = {
-		elixirLS = {};
-	};
 }
 
 -- pyright
@@ -62,10 +59,10 @@ lsp.jsonls.setup {
 }
 
 -- Tailwind CSS LS
-lsp.tailwindcss.setup {
-	capabilities = capabilities;
-	on_attach = on_attach;
-}
+-- lsp.tailwindcss.setup {
+-- 	capabilities = capabilities;
+-- 	on_attach = on_attach;
+-- }
 
 -- elmls
 lsp.elmls.setup {
