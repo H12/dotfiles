@@ -26,7 +26,14 @@ source ~/.asdf/asdf.fish
 # Make python point to python3
 alias python "python3"
 
-# Extra git aliases
+# Git aliases
+alias gst "git status"
+alias ga "git add"
+alias gc "git commit"
+alias gc! "git commit --ammend"
+alias gca "git commit --all"
+alias gca! "git commit --all --amend"
+alias gd "git diff"
 alias gpo "gh pr checkout"
 alias gpu "git push -u && gh pr create --web"
 
