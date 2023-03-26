@@ -30,13 +30,21 @@ alias python "python3"
 alias gst "git status"
 alias ga "git add"
 alias gc "git commit"
-alias gc! "git commit --ammend"
+alias gc! "git commit --amend"
 alias gca "git commit --all"
 alias gca! "git commit --all --amend"
 alias gd "git diff"
 alias glg "git log"
+alias gco "git checkout"
+alias grs "git reset"
+alias grss "git reset --staged"
 alias gpo "gh pr checkout"
 alias gpu "git push -u && gh pr create --web"
+
+# Helpful directory aliases
+alias ... "../.."
+alias .... "../../.."
+alias ..... "../../../.."
 
 # Add tldr function
 function tldr
