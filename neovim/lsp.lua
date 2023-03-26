@@ -46,6 +46,19 @@ lsp.elixirls.setup {
 	on_attach = on_attach;
 }
 
+-- Rust Analyzer
+lsp.rust_analyzer.setup {
+	capabilities = capabilities;
+	on_attach = on_attach;
+	settings = {
+		['rust-analyzer'] = {
+			diagnostics = {
+				enable = false,
+			},
+		},
+	},
+}
+
 -- pyright
 lsp.pyright.setup {
 	capabilities = capabilities;
