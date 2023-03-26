@@ -1,3 +1,5 @@
+vim.o.laststatus = 3
+
 require('lualine').setup({
 	options = {
 		theme = 'gruvbox-material'
