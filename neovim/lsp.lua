@@ -58,11 +58,18 @@ lsp.jsonls.setup {
 	on_attach = on_attach;
 }
 
+-- TypeScript
+lsp.tsserver.setup {
+	capabilities = capabilities;
+	on_attach = on_attach;
+}
+
+
 -- Tailwind CSS LS
--- lsp.tailwindcss.setup {
--- 	capabilities = capabilities;
--- 	on_attach = on_attach;
--- }
+lsp.tailwindcss.setup {
+	capabilities = capabilities;
+	on_attach = on_attach;
+}
 
 -- elmls
 lsp.elmls.setup {
@@ -82,7 +89,7 @@ lsp.gopls.setup {
 	on_attach = on_attach;
 }
 
-lsp.sumneko_lua.setup {
+lsp.lua_ls.setup {
 	capabilities = capabilities;
 	on_attach = on_attach;
 	settings = {
