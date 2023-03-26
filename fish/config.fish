@@ -34,6 +34,7 @@ alias gc! "git commit --ammend"
 alias gca "git commit --all"
 alias gca! "git commit --all --amend"
 alias gd "git diff"
+alias glg "git log"
 alias gpo "gh pr checkout"
 alias gpu "git push -u && gh pr create --web"
 
