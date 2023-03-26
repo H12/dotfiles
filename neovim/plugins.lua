@@ -86,6 +86,9 @@ return require('packer').startup(function(use)
 	-- Tmux stuffs
 	use 'christoomey/vim-tmux-navigator'
 
+	-- Copilot
+	use 'github/copilot.vim'
+
 	-- THEMES --
 
 	-- Catppuccin
