@@ -1,22 +1,8 @@
 #!bin/bash
 
-ag=~/.agignore
-bat=~/.config/bat/config
 hammerspoon=~/.hammerspoon/init.lua
 kitty=~/.config/kitty/kitty.conf
 tmux_conf=~/.tmux.conf
-
-# The Silver Searcher
-if [ ! -f $ag ] ; then
-	echo "Creating symbolic link for .agignore..."
-	ln -s $PWD/ag/agignore $ag
-fi
-
-# BAT
-if [ ! -f $bat ] ; then
-	echo "Creating symbolic link for BAT config..."
-	ln -s $PWD/bat/config $bat
-fi
 
 # Hammerspoon
 if [ ! -f $hammerspoon ] ; then

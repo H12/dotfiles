@@ -17,6 +17,10 @@ set -gx VISUAL nvim
 # Set default options for FZF
 set -gx FZF_DEFAULT_OPTS --color=bw
 
+# Set options for asdf erlang
+set -gx KERL_CONFIGURE_OPTIONS "--without-javac --with-ssl=$(brew --prefix openssl@1.1)"
+set -gx KERL_BUILD_DOCS "yes"
+
 # Make iex terminal remember history
 set -gx ERL_AFLAGS "-kernel shell_history enabled"
 

@@ -26,6 +26,10 @@ return require('packer').startup(function(use)
 	-- Language Server Protocol
 	use {
 		"williamboman/mason.nvim",
+		run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+	}
+
+	use {
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	}
@@ -43,6 +47,7 @@ return require('packer').startup(function(use)
 	use { 'nvim-telescope/telescope-file-browser.nvim' }
 	use { 'nvim-telescope/telescope-ui-select.nvim' }
 
+	-- Landing page
 	use {
 		'startup-nvim/startup.nvim',
 		requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
