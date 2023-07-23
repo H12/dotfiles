@@ -29,17 +29,17 @@ local function on_attach(_, bufnr)
 	buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.format({ async = true})<CR>', opts)
 end
 
--- ElixirLS
+-- Elixir
 lsp.elixirls.setup {
-	capabilities = capabilities;
-	cmd = { '/Users/henryfirth/.local/share/nvim/mason/packages/elixir-ls/language_server.sh' };
-	on_attach = on_attach;
+	capabilities = capabilities,
+	cmd = { '/Users/henryfirth/.local/share/nvim/mason/packages/elixir-ls/language_server.sh' },
+	on_attach = on_attach,
 }
 
 -- Rust Analyzer
 lsp.rust_analyzer.setup {
-	capabilities = capabilities;
-	on_attach = on_attach;
+	capabilities = capabilities,
+	on_attach = on_attach,
 	settings = {
 		['rust-analyzer'] = {
 			diagnostics = {
@@ -49,52 +49,22 @@ lsp.rust_analyzer.setup {
 	},
 }
 
--- pyright
-lsp.pyright.setup {
-	capabilities = capabilities;
-	on_attach = on_attach;
-}
-
--- jsonls
-lsp.jsonls.setup {
-	capabilities = capabilities;
-	on_attach = on_attach;
-}
-
--- TypeScript
-lsp.tsserver.setup {
-	capabilities = capabilities;
-	on_attach = on_attach;
-}
-
-
 -- Tailwind CSS LS
 lsp.tailwindcss.setup {
-	capabilities = capabilities;
-	on_attach = on_attach;
-}
-
--- elmls
-lsp.elmls.setup {
-	capabilities = capabilities;
-	on_attach = on_attach;
-}
-
--- Svelte
-lsp.svelte.setup {
-	capabilities = capabilities;
-	on_attach = on_attach;
+	capabilities = capabilities,
+	on_attach = on_attach,
 }
 
 -- gopls
 lsp.gopls.setup {
-	capabilities = capabilities;
-	on_attach = on_attach;
+	capabilities = capabilities,
+	on_attach = on_attach,
 }
 
+-- lua
 lsp.lua_ls.setup {
-	capabilities = capabilities;
-	on_attach = on_attach;
+	capabilities = capabilities,
+	on_attach = on_attach,
 	settings = {
 		Lua = {
 			runtime = {
@@ -115,10 +85,4 @@ lsp.lua_ls.setup {
 			},
 		},
 	},
-}
-
--- clangd
-lsp.clangd.setup {
-	capabilities = capabilities;
-	on_attach = on_attach;
 }
