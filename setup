@@ -1,8 +1,55 @@
-#!/bin/bash
+#!/opt/homebrew/bin/fish
 
-source ./script/asdf
-source ./script/homebrew
-source ./script/fish
-source ./script/nvim
-source ./script/ranger
-source ./script/misc
+function echo_heading
+	echo
+	echo -n $argv[1]
+	sleep 0.1; echo -n ".";
+	sleep 0.1; echo -n ".";
+	sleep 0.1; echo -n ".";
+	echo
+	sleep 0.2
+end
+
+echo_heading "Checking for Rust/Cargo installation"
+
+if not rustc -V
+    echo "Rust is not installed. Installing..."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+end
+
+env sccache -V 2> /dev/null
+if test $status -ne 0
+	cargo install sccache
+end
+
+set cargo_packages \
+	cargo-info \
+	irust \
+	bacon \
+	ripgrep \
+	bat \
+	exa \
+	rtx-cli \
+	gitui \
+	bob-nvim \
+	wiki-tui \
+	starship \
+	porsmo
+
+echo_heading "Installing Cargo packages"
+
+for i in $cargo_packages
+	cargo install $i &| condense_cargo_output
+end
+
+
+echo_heading "Symlinking Fish config"
+
+ln -vsfh $PWD/fish/config.fish ~/.config/fish/config.fish
+ln -vsfh $PWD/fish/functions/**.fish ~/.config/fish/functions/
+
+echo_heading "Symlinking Hammerspoon config"
+
+ln -vsfh $PWD/hammerspoon/hammerspoon.lua ~/.hammerspoon/hammerspoon.lua
+
+echo "\nScript completed successfully 🎉"
