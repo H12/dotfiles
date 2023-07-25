@@ -1,16 +1,8 @@
 #!/opt/homebrew/bin/fish
 
-function echo_heading
-	echo
-	echo -n $argv[1]
-	sleep 0.1; echo -n ".";
-	sleep 0.1; echo -n ".";
-	sleep 0.1; echo -n ".";
-	echo
-	sleep 0.2
-end
+source script/helpers.fish
 
-echo_heading "Checking for Rust/Cargo installation"
+print_heading "Checking for Rust/Cargo installation"
 
 if not rustc -V
     echo "Rust is not installed. Installing..."
@@ -36,23 +28,23 @@ set cargo_packages \
 	starship \
 	porsmo
 
-echo_heading "Installing Cargo packages"
+print_heading "Installing Cargo packages"
 
 for i in $cargo_packages
 	cargo install $i &| condense_cargo_output
 end
 
 
-echo_heading "Symlinking Fish config"
+print_heading "Symlinking Fish config"
 
 ln -vsfh $PWD/fish/config.fish ~/.config/fish/config.fish
 ln -vsfh $PWD/fish/functions/**.fish ~/.config/fish/functions/
 
-echo_heading "Symlinking Hammerspoon config"
+print_heading "Symlinking Hammerspoon config"
 
 ln -vsfh $PWD/hammerspoon/hammerspoon.lua ~/.hammerspoon/hammerspoon.lua
 
-echo_heading "Symlinking WezTerm config"
+print_heading "Symlinking WezTerm config"
 
 ln -vsfh $PWD/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
 
