@@ -35,4 +35,8 @@ alias ... "../.."
 alias .... "../../.."
 alias ..... "../../../.."
 
+# Activate rtx
+~/.cargo/bin/rtx activate fish | source
+
+# Initialize starship prompt
 starship init fish | source
