@@ -1,8 +1,8 @@
 hs.window.animationDuration = 0 -- disable animations
 
-local defaultMash  = { 'ctrl', 'alt', 'cmd' }
+local defaultMash = { 'ctrl', 'alt', 'cmd' }
 
-function move(x, y, w, h, c, r, i, j, p)
+local function move(x, y, w, h, c, r, i, j, p)
 	-- NOTE: In order to have sensible defaults, it is assumed that the
 	-- maximum number of rows or columns is two. To create window
 	-- arrangements with more than two rows or columns, values must be
@@ -46,33 +46,52 @@ function move(x, y, w, h, c, r, i, j, p)
 	window:setFrame(windowFrame)
 end
 
-function bindHotkey(key, func, mash)
+local function bindHotkey(key, func, mash)
 	mash = mash or defaultMash
 	hs.hotkey.bind(mash, key, func)
 end
 
-function center()        move(0.125, 0.075, 0.75, 0.85) end
-function fill()          move(0.0, 0.0, 1.0, 1.0) end
-function top50()         move(0.0, 0.0, 1.0, 0.5) end
-function left60()        move(0.0, 0.0, 0.58, 1.0) end
-function left50()        move(0.0, 0.0, 0.5, 1.0) end
-function left40()        move(0.0, 0.0, 0.42, 1.0) end
-function right60()       move(0.42, 0.0, 0.58, 1.0) end
-function right50()       move(0.5, 0.0, 0.5, 1.0) end
-function right40()       move(0.58, 0.0, 0.42, 1.0) end
-function bottom50()      move(0.0, 0.5, 1.0, 0.5) end
-function topLeft50()     move(0.0, 0.0, 0.5, 0.5) end
-function topRight50()    move(0.5, 0.0, 0.5, 0.5) end
-function bottomLeft50()  move(0.0, 0.5, 0.5, 0.5) end
-function bottomRight50() move(0.5, 0.5, 0.5, 0.5) end
-function topLeft40()     move(0.0, 0.0, 0.42, 0.5) end
-function topRight40()    move(0.58, 0.0, 0.42, 0.5) end
-function bottomLeft40()  move(0.0, 0.5, 0.42, 0.5) end
-function bottomRight40() move(0.58, 0.5, 0.42, 0.5) end
+local function center() move(0.125, 0.075, 0.75, 0.85) end
 
-function firstThird() move(0.0, 0.0, 1/3, 1.0, 3, 1, 0, 0) end
-function secndThird() move(1/3, 0.0, 1/3, 1.0, 3, 1, 1, 0) end
-function thirdThird() move(2/3, 0.0, 1/3, 1.0, 3, 1, 2, 0) end
+local function fill() move(0.0, 0.0, 1.0, 1.0) end
+
+local function top50() move(0.0, 0.0, 1.0, 0.5) end
+
+local function left60() move(0.0, 0.0, 0.58, 1.0) end
+
+local function left50() move(0.0, 0.0, 0.5, 1.0) end
+
+local function left40() move(0.0, 0.0, 0.42, 1.0) end
+
+local function right60() move(0.42, 0.0, 0.58, 1.0) end
+
+local function right50() move(0.5, 0.0, 0.5, 1.0) end
+
+local function right40() move(0.58, 0.0, 0.42, 1.0) end
+
+local function bottom50() move(0.0, 0.5, 1.0, 0.5) end
+
+local function topLeft50() move(0.0, 0.0, 0.5, 0.5) end
+
+local function topRight50() move(0.5, 0.0, 0.5, 0.5) end
+
+local function bottomLeft50() move(0.0, 0.5, 0.5, 0.5) end
+
+local function bottomRight50() move(0.5, 0.5, 0.5, 0.5) end
+
+local function topLeft40() move(0.0, 0.0, 0.42, 0.5) end
+
+local function topRight40() move(0.58, 0.0, 0.42, 0.5) end
+
+local function bottomLeft40() move(0.0, 0.5, 0.42, 0.5) end
+
+local function bottomRight40() move(0.58, 0.5, 0.42, 0.5) end
+
+local function firstThird() move(0.0, 0.0, 1 / 3, 1.0, 3, 1, 0, 0) end
+
+local function secndThird() move(1 / 3, 0.0, 1 / 3, 1.0, 3, 1, 1, 0) end
+
+local function thirdThird() move(2 / 3, 0.0, 1 / 3, 1.0, 3, 1, 2, 0) end
 
 bindHotkey("C", center)
 bindHotkey("F", fill)
