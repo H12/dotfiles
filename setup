@@ -52,4 +52,8 @@ echo_heading "Symlinking Hammerspoon config"
 
 ln -vsfh $PWD/hammerspoon/hammerspoon.lua ~/.hammerspoon/hammerspoon.lua
 
-echo "\nScript completed successfully 🎉"
+echo_heading "Symlinking WezTerm config"
+
+ln -vsfh $PWD/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
+
+echo -e "\nScript completed successfully 🎉"
