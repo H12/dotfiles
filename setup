@@ -48,4 +48,14 @@ print_heading "Symlinking WezTerm config"
 
 ln -vsfh $PWD/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
 
+print_heading "Symlinking NeoVim config"
+
+mkdir -p ~/.config/nvim/lua/plugins
+mkdir -p ~/.config/nvim/after/ftplugin
+
+ln -vsfh $PWD/neovim/init.lua ~/.config/nvim/init.lua
+ln -vsfh $PWD/neovim/plugins.lua ~/.config/nvim/lua/plugins.lua
+ln -vsfh $PWD/neovim/plugins/*.lua ~/.config/nvim/lua/plugins/
+ln -vsfh $PWD/neovim/ftplugin/*lua ~/.config/nvim/after/ftplugin/
+
 echo -e "\nScript completed successfully 🎉"
