@@ -18,6 +18,7 @@ set cargo_packages \
 	cargo-info \
 	irust \
 	bacon \
+	fd-find \
 	ripgrep \
 	bat \
 	exa \

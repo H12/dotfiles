@@ -21,7 +21,6 @@ require("lazy").setup({
 	require("plugins/tokyonight"),
 	require("plugins/telescope"),
 	require("plugins/telescope").file_browser,
-	require("plugins/telescope").fzf_native,
 	require("plugins/gitsigns"),
 	require("plugins/indent-blankline"),
 	require("plugins/cmp"),
