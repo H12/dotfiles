@@ -36,7 +36,15 @@ alias .... "../../.."
 alias ..... "../../../.."
 
 # Activate rtx
-~/.cargo/bin/rtx activate fish | source
+if type -q rtx
+	rtx activate fish | source
+else
+	echo "rtx not found"
+end
 
 # Initialize starship prompt
-starship init fish | source
+if type -q starship
+	starship init fish | source
+else
+	echo "starship not found"
+end

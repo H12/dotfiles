@@ -4,14 +4,20 @@ source script/helpers.fish
 
 print_heading "Checking for Rust/Cargo installation"
 
-if not rustc -V
-    echo "Rust is not installed. Installing..."
+if not type -q rustc
+    print_heading "Rust is not installed. Installing"
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+    print_heading "Adding cargo binaries to path"
+    set PATH ~/.cargo/bin $PATH
+else
+	rustc -V
 end
 
-env sccache -V 2> /dev/null
-if test $status -ne 0
-	cargo install sccache
+if not type -q sccache
+	cargo install sccache &| condense_cargo_output
+else
+	sccache -V
 end
 
 set cargo_packages \
