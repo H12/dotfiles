@@ -18,6 +18,7 @@ require("lazy").setup({
 	require("plugins/mason"),
 	require("plugins/mason").lspconfig,
 	require("plugins/treesitter"),
+	require("plugins/treesitter").textobjects,
 	require("plugins/tokyonight"),
 	require("plugins/telescope"),
 	require("plugins/telescope").file_browser,
