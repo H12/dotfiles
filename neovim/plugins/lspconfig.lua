@@ -5,7 +5,7 @@ local function configs()
 
 	lspconfig.lua_ls.setup({
 		capabilities = capabilities,
-		cmd = { "/Users/henryfirth/.local/share/nvim/mason/bin/lua-language-server" },
+		cmd = { "lua-language-server" },
 		settings = {
 			Lua = {
 				runtime = {
@@ -26,17 +26,17 @@ local function configs()
 
 	lspconfig.rust_analyzer.setup({
 		capabilities = capabilities,
-		cmd = { "/Users/henryfirth/.local/share/nvim/mason/bin/rust-analyzer" }
+		cmd = { "rust-analyzer" }
 	})
 
 	lspconfig.elixirls.setup({
 		capabilities = capabilities,
-		cmd = { "/Users/henryfirth/.local/share/nvim/mason/bin/elixir-ls" }
+		cmd = { "elixir-ls" }
 	})
 
 	lspconfig.tailwindcss.setup({
 		capabilities = capabilities,
-		cmd = { "/Users/henryfirth/.local/share/nvim/mason/bin/tailwindcss-language-server" },
+		cmd = { "tailwindcss-language-server" },
 	})
 end
 
