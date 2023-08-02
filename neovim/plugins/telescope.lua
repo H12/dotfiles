@@ -14,7 +14,7 @@ vim.api.nvim_set_keymap('n',
 	{ noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n',
-	'<C-y>',
+	'<C-h>',
 	':Telescope oldfiles<cr>',
 	{ noremap = true, silent = true })
 
