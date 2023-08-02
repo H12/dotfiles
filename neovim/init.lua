@@ -2,7 +2,7 @@
 require('plugins')
 
 -- Set colorscheme
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd [[colorscheme tokyonight-night]]
 
 -- Turn on termguicolors
 vim.o.termguicolors = true

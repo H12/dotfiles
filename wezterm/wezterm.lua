@@ -19,7 +19,9 @@ local tab_colors =
 
 config.color_scheme = 'Tokyo Night'
 config.font = wezterm.font('FantasqueSansM Nerd Font')
-config.font_size = 16.0
+config.font_size = 17.0
+
+config.window_decorations = "MACOS_FORCE_DISABLE_SHADOW | INTEGRATED_BUTTONS | RESIZE"
 
 config.window_frame = {
 	active_titlebar_bg = tab_colors[config.color_scheme].background,
