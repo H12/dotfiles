@@ -18,7 +18,11 @@ local tab_colors =
 }
 
 config.color_scheme = 'Tokyo Night'
-config.font = wezterm.font('FantasqueSansM Nerd Font')
+config.font = wezterm.font_with_fallback({
+	'Fantasque Sans Mono',
+	{ family =  'FantasqueSansM Nerd Font', scale = 0.64 }
+})
+
 config.font_size = 17.0
 
 config.window_decorations = "MACOS_FORCE_DISABLE_SHADOW | INTEGRATED_BUTTONS | RESIZE"
