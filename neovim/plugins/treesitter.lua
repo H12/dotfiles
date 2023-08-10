@@ -6,12 +6,14 @@ return {
 
 		configs.setup({
 			ensure_installed = {
-				"lua",
+				"css",
 				"elixir",
 				"heex",
-				"javascript",
 				"html",
+				"javascript",
+				"lua",
 				"rust",
+				"sql",
 			},
 			ignore_install = {},
 			sync_install = false,
