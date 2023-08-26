@@ -1,15 +1,30 @@
 #!/opt/homebrew/bin/fish
 
-argparse 's/skip-cargo' -- $argv
+source script/helpers.fish
+
+argparse 's/skip-install' -- $argv
+
+print_heading "Checking for Fisher installation"
 
 if not type -q fisher
-	echo "Fisher is not installed. Installing"
+	print_heading "Fisher is not installed. Installing"
 	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 else
 	fisher -v
 end
 
-source script/helpers.fish
+if not set -q _flag_skip_install
+	print_heading "Installing Fisher packages"
+
+	set fisher_packages \
+		jethrokuan/z \
+		jethrokuan/fzf \
+		jhillyerd/plugin-git
+
+	for i in $fisher_packages
+		fisher install $i
+	end
+end
 
 print_heading "Checking for Rust/Cargo installation"
 
@@ -29,9 +44,9 @@ else
 	sccache -V
 end
 
-if set -q _flag_skip_cargo
-	print_heading "Skipping Cargo packages"
-else
+if not set -q _flag_skip_install
+	print_heading "Installing Cargo packages"
+
 	set cargo_packages \
 		cargo-info \
 		irust \
@@ -46,9 +61,6 @@ else
 		wiki-tui \
 		starship \
 		porsmo
-
-
-	print_heading "Installing Cargo packages"
 
 	for i in $cargo_packages
 		cargo install $i &| condense_cargo_output
