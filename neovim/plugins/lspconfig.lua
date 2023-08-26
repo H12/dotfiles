@@ -26,17 +26,18 @@ local function configs()
 
 	lspconfig.rust_analyzer.setup({
 		capabilities = capabilities,
-		cmd = { "rust-analyzer" }
+	})
+
+	lspconfig.gopls.setup({
+		capabilities = capabilities,
 	})
 
 	lspconfig.elixirls.setup({
 		capabilities = capabilities,
-		cmd = { "elixir-ls" }
 	})
 
 	lspconfig.tailwindcss.setup({
 		capabilities = capabilities,
-		cmd = { "tailwindcss-language-server" },
 	})
 end
 

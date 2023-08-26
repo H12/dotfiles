@@ -8,6 +8,7 @@ return {
 			ensure_installed = {
 				"css",
 				"elixir",
+				"go",
 				"heex",
 				"html",
 				"javascript",
