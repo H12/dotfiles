@@ -22,6 +22,9 @@ alias ... "../.."
 alias .... "../../.."
 alias ..... "../../../.."
 
+# CLI Tool Replacement Aliases
+alias ls "exa"
+
 # Activate rtx
 if type -q rtx
 	rtx activate fish | source
