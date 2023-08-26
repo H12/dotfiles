@@ -23,7 +23,7 @@ config.font = wezterm.font_with_fallback({
 	{ family =  'FantasqueSansM Nerd Font', scale = 0.64 }
 })
 
-config.font_size = 17.0
+config.font_size = 16.0
 
 config.window_decorations = "MACOS_FORCE_DISABLE_SHADOW | INTEGRATED_BUTTONS | RESIZE"
 

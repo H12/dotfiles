@@ -52,45 +52,25 @@ local function bindHotkey(key, func, mash)
 end
 
 local function center() move(0.125, 0.075, 0.75, 0.85) end
-
 local function fill() move(0.0, 0.0, 1.0, 1.0) end
-
 local function top50() move(0.0, 0.0, 1.0, 0.5) end
-
 local function left60() move(0.0, 0.0, 0.58, 1.0) end
-
 local function left50() move(0.0, 0.0, 0.5, 1.0) end
-
 local function left40() move(0.0, 0.0, 0.42, 1.0) end
-
 local function right60() move(0.42, 0.0, 0.58, 1.0) end
-
 local function right50() move(0.5, 0.0, 0.5, 1.0) end
-
 local function right40() move(0.58, 0.0, 0.42, 1.0) end
-
 local function bottom50() move(0.0, 0.5, 1.0, 0.5) end
-
 local function topLeft50() move(0.0, 0.0, 0.5, 0.5) end
-
 local function topRight50() move(0.5, 0.0, 0.5, 0.5) end
-
 local function bottomLeft50() move(0.0, 0.5, 0.5, 0.5) end
-
 local function bottomRight50() move(0.5, 0.5, 0.5, 0.5) end
-
 local function topLeft40() move(0.0, 0.0, 0.42, 0.5) end
-
 local function topRight40() move(0.58, 0.0, 0.42, 0.5) end
-
 local function bottomLeft40() move(0.0, 0.5, 0.42, 0.5) end
-
 local function bottomRight40() move(0.58, 0.5, 0.42, 0.5) end
-
 local function firstThird() move(0.0, 0.0, 1 / 3, 1.0, 3, 1, 0, 0) end
-
 local function secndThird() move(1 / 3, 0.0, 1 / 3, 1.0, 3, 1, 1, 0) end
-
 local function thirdThird() move(2 / 3, 0.0, 1 / 3, 1.0, 3, 1, 2, 0) end
 
 bindHotkey("C", center)
