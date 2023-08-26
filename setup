@@ -1,15 +1,24 @@
 #!/opt/homebrew/bin/fish
 
+argparse 's/skip-cargo' -- $argv
+
+if not type -q fisher
+	echo "Fisher is not installed. Installing"
+	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+else
+	fisher -v
+end
+
 source script/helpers.fish
 
 print_heading "Checking for Rust/Cargo installation"
 
 if not type -q rustc
-    print_heading "Rust is not installed. Installing"
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	print_heading "Rust is not installed. Installing"
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-    print_heading "Adding cargo binaries to path"
-    set PATH ~/.cargo/bin $PATH
+	print_heading "Adding cargo binaries to path"
+	set PATH ~/.cargo/bin $PATH
 else
 	rustc -V
 end
