@@ -1,8 +1,30 @@
-#!/opt/homebrew/bin/fish
+#!/usr/local/bin/fish
 
 source script/helpers.fish
 
 argparse 's/skip-install' -- $argv
+
+print_heading "Checking for Homebrew installation"
+
+if not type -q brew
+	print_heading "Homebrew is not installed. Installing"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+	brew -v
+end
+
+if not set -q _flag_skip_install
+	print_heading "Installing Homebrew packages"
+
+	set homebrew_packages \
+		fish \
+		hammerspoon \
+		cormacrelf/tap/dark-notify
+
+	for i in $homebrew_packages
+		brew install $i
+	end
+end
 
 print_heading "Checking for Fisher installation"
 

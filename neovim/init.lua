@@ -1,8 +1,6 @@
--- Source plugin code
-require('plugins')
-
--- Set colorscheme
-vim.cmd [[colorscheme tokyonight-night]]
+if os.getenv('theme') == 'light' then
+	vim.o.background = 'light'
+end
 
 -- Turn on termguicolors
 vim.o.termguicolors = true
@@ -17,14 +15,8 @@ vim.o.wrap = false
 vim.o.number = true
 vim.o.relativenumber = true
 
--- Turn of default greeter page
-vim.o.shortmess = 'i'
-
 -- Enable SignColumn globally
 vim.o.signcolumn = 'yes'
-
--- Disable SignColumn on the greeter page
-vim.opt_local.signcolumn = 'no'
 
 -- Highlight search incrementally but not permanently
 vim.opt.incsearch = true
@@ -41,9 +33,16 @@ vim.api.nvim_set_keymap('x', 'ii', '^o$h', {
 	silent = true,
 })
 
+-- Remove greeter message stuff
+vim.opt_local.signcolumn = 'no'
+vim.o.shortmess = 'i'
+
 -- Use global shared status line
 vim.o.laststatus = 3
 
 -- Re-center cursor when paging vertically
 vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true })
+
+-- Source plugin code
+require('plugins')

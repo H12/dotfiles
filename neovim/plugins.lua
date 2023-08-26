@@ -20,6 +20,7 @@ require("lazy").setup({
 	require("plugins/treesitter"),
 	require("plugins/treesitter").textobjects,
 	require("plugins/tokyonight"),
+	require("plugins/dark-notify"),
 	require("plugins/telescope"),
 	require("plugins/telescope").file_browser,
 	require("plugins/gitsigns"),

@@ -26,11 +26,11 @@ local opts = {
 		title = "Basic Commands",
 		margin = 5,
 		content = {
-			{ " Find File", "Telescope find_files", "<C-p>" },
-			{ " Find Word", "Telescope live_grep", "<C-f>" },
-			{ " Recent Files", "Telescope oldfiles", "<C-y>" },
-			{ " File Browser", "Telescope file_browser", "<C-b>" },
-			{ " New File", "lua require'startup'.new_file()", "<C-n>" },
+			{ " Find File",    "Telescope find_files",            "<C-p>" },
+			{ " Find Word",    "Telescope live_grep",             "<C-f>" },
+			{ " Recent Files", "Telescope oldfiles",              "<C-y>" },
+			{ " File Browser", "Telescope file_browser",          "<C-b>" },
+			{ " New File",     "lua require'startup'.new_file()", "<C-n>" },
 		},
 		highlight = "String",
 		default_color = "",
@@ -74,5 +74,5 @@ return {
 	"startup-nvim/startup.nvim",
 	dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	opts = opts,
-	config = true
+	config = true,
 }

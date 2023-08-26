@@ -13,14 +13,36 @@ local tab_colors =
 		foreground = '#C0CAf5',
 		active     = '#1A1B26',
 		inactive   = '#1F2335',
+	},
+	['Tokyo Night Day'] = {
+		background = '#BBC2CF',
+		foreground = '#387068',
+		active     = '#E1E2E7',
+		inactive   = '#D1D4DB',
 	}
 	-- TODO: Add more colors for favorite color schemes
 }
 
-config.color_scheme = 'Tokyo Night'
+local function get_appearance()
+	if wezterm.gui then
+		return wezterm.gui.get_appearance()
+	end
+
+	return 'Dark'
+end
+
+local function scheme_for_appearance(appearance)
+	if appearance:find 'Dark' then
+		return 'Tokyo Night'
+	else
+		return 'Tokyo Night Day'
+	end
+end
+
+config.color_scheme = scheme_for_appearance(get_appearance())
 config.font = wezterm.font_with_fallback({
 	'Fantasque Sans Mono',
-	{ family =  'FantasqueSansM Nerd Font', scale = 0.64 }
+	{ family = 'FantasqueSansM Nerd Font', scale = 0.64 }
 })
 
 config.font_size = 16.0
