@@ -41,7 +41,8 @@ if not set -q _flag_skip_install
 	set fisher_packages \
 		jethrokuan/z \
 		jethrokuan/fzf \
-		jhillyerd/plugin-git
+		jhillyerd/plugin-git \
+		edc/bass
 
 	for i in $fisher_packages
 		fisher install $i
