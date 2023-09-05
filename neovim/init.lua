@@ -1,6 +1,7 @@
-if os.getenv('theme') == 'light' then
-	vim.o.background = 'light'
-end
+-- Source plugin code
+require('plugins')
+
+vim.cmd [[colorscheme tokyonight]]
 
 -- Turn on termguicolors
 vim.o.termguicolors = true
@@ -43,6 +44,3 @@ vim.o.laststatus = 3
 -- Re-center cursor when paging vertically
 vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true })
-
--- Source plugin code
-require('plugins')
