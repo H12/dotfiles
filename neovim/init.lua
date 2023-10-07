@@ -33,6 +33,10 @@ vim.o.smarttab = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
 
+-- Use global shared status line
+vim.o.shortmess = 'I'
+vim.o.laststatus = 3
+
 -- Add text objects for "line"
 vim.api.nvim_set_keymap('o', 'ii', ':<C-u>normal! v^o$h<cr>', {
 	noremap = true,
@@ -43,10 +47,6 @@ vim.api.nvim_set_keymap('x', 'ii', '^o$h', {
 	noremap = true,
 	silent = true,
 })
-
--- Use global shared status line
-vim.o.shortmess = 'I'
-vim.o.laststatus = 3
 
 -- Re-center cursor when paging vertically
 vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true })
