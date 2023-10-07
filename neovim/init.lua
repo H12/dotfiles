@@ -19,6 +19,16 @@ vim.o.relativenumber = true
 -- Enable SignColumn globally
 vim.o.signcolumn = 'yes'
 
+-- Disable swap files
+vim.o.swapfile = false
+
+-- Set default tab width
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.smarttab = true
+
 -- Highlight search incrementally but not permanently
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
@@ -34,11 +44,8 @@ vim.api.nvim_set_keymap('x', 'ii', '^o$h', {
 	silent = true,
 })
 
--- Remove greeter message stuff
-vim.opt_local.signcolumn = 'no'
-vim.o.shortmess = 'i'
-
 -- Use global shared status line
+vim.o.shortmess = 'I'
 vim.o.laststatus = 3
 
 -- Re-center cursor when paging vertically
