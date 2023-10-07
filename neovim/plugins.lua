@@ -20,6 +20,7 @@ require("lazy").setup({
 	require("plugins/treesitter"),
 	require("plugins/treesitter").textobjects,
 	require("plugins/tokyonight"),
+	"ishan9299/nvim-solarized-lua",
 	require("plugins/dark-notify"),
 	require("plugins/telescope"),
 	require("plugins/telescope").file_browser,

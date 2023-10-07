@@ -1,7 +1,7 @@
 -- Source plugin code
 require('plugins')
 
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd [[colorscheme solarized]]
 
 -- Turn on termguicolors
 vim.o.termguicolors = true
