@@ -6,6 +6,8 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+config.default_prog = { '/usr/local/bin/fish', '-l' }
+
 local tab_colors =
 {
 	['Tokyo Night'] = {
