@@ -1,7 +1,45 @@
 -- Language server configs
-local function configs()
+local function config()
 	local lspconfig = require("lspconfig")
+	local configs = require("lspconfig.configs")
+
 	local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+	-- EFM Setup
+	lspconfig.efm.setup({
+		capabilities = capabilities,
+		filetypes = { "html", "heex" },
+		init_options = { documentFormatting = true },
+	})
+
+	-- Lexical config setup
+	local lexical_config = {
+		filetypes = { "elixir", "eelixir", },
+		cmd = { "/Users/henryfirth/code/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
+		settings = {
+			capabilities = capabilities,
+			filetypes = { "elixir", "eelixir", "heex", "html" },
+		},
+	}
+
+	if not configs.lexical then
+		configs.lexical = {
+			default_config = {
+				filetypes = lexical_config.filetypes,
+				cmd = lexical_config.cmd,
+				root_dir = function(fname)
+					return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
+				end,
+				-- optional settings
+				settings = lexical_config.settings,
+			},
+		}
+	end
+
+	lspconfig.lexical.setup({
+		capabilities = capabilities,
+		filetypes = { "elixir", "eelixir" },
+	})
 
 	lspconfig.lua_ls.setup({
 		capabilities = capabilities,
@@ -29,10 +67,6 @@ local function configs()
 	})
 
 	lspconfig.gopls.setup({
-		capabilities = capabilities,
-	})
-
-	lspconfig.elixirls.setup({
 		capabilities = capabilities,
 	})
 
@@ -83,5 +117,5 @@ return {
 	"neovim/nvim-lspconfig",
 	lazy = false,
 	priority = 300, -- Must come after cmp
-	config = configs
+	config = config
 }

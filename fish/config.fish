@@ -10,6 +10,9 @@ set PATH ~/.cargo/bin $PATH
 # Add bob binaries to path
 set PATH ~/.local/share/bob/nvim-bin $PATH
 
+# Add mason binaries to path
+set PATH ~/.local/share/nvim/mason/bin $PATH
+
 # Set EDITOR and VISUAL
 set -gx EDITOR nvim
 set -gx VISUAL nvim
