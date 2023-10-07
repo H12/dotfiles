@@ -18,11 +18,37 @@ if not set -q _flag_skip_install
 
 	set homebrew_packages \
 		fish \
-		hammerspoon \
+		wezterm \
 		cormacrelf/tap/dark-notify
 
 	for i in $homebrew_packages
 		brew install $i
+	end
+
+	print_heading "Installing Homebrew fonts"
+
+	set homebrew_fonts \
+		font-fira-code \
+		font-fira-mono \
+		font-fira-sans \
+		font-fira-mono-nerd-font \
+		font-fantasque-sans-mono \
+		font-fantasque-sans-mono-nerd-font
+
+
+	brew tap homebrew/cask-fonts
+	for i in $homebrew_fonts
+		brew install --cask $i
+	end
+
+	print_heading "Installing Homebrew casks"
+
+	set homebrew_casks \
+		wezterm \
+		hammerspoon
+
+	for i in $homebrew_casks
+		brew install --cask $i
 	end
 end
 
@@ -98,10 +124,12 @@ ln -vsfh $PWD/fish/functions/**.fish ~/.config/fish/functions/
 
 print_heading "Symlinking Hammerspoon config"
 
-ln -vsfh $PWD/hammerspoon/hammerspoon.lua ~/.hammerspoon/hammerspoon.lua
+mkdir -p ~/.hammerspoon
+ln -vsfh $PWD/hammerspoon/init.lua ~/.hammerspoon/init.lua
 
 print_heading "Symlinking WezTerm config"
 
+mkdir -p ~/.config/wezterm
 ln -vsfh $PWD/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
 
 print_heading "Symlinking NeoVim config"
