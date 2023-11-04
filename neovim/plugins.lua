@@ -32,7 +32,6 @@ require("lazy").setup({
 	require("plugins/cmp").vsnip,
 	require("plugins/cmp").vvsnip,
 	require("plugins/cmp").vvsnipi,
-	require("plugins/startup"),
 	require("plugins/lualine"),
 
 	"folke/twilight.nvim",
