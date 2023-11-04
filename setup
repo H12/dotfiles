@@ -17,7 +17,9 @@ if not set -q _flag_skip_install
 	print_heading "Installing Homebrew packages"
 
 	set homebrew_packages \
-		fish \
+		fish    \
+		git     \
+		git-lfs \
 		wezterm \
 		cormacrelf/tap/dark-notify
 
@@ -134,12 +136,11 @@ ln -vsfh $PWD/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
 
 print_heading "Symlinking NeoVim config"
 
-mkdir -p ~/.config/nvim/lua/plugins
-mkdir -p ~/.config/nvim/after/ftplugin
+mkdir -p ~/.config/nvim/lua/kickstart/plugins
+mkdir -p ~/.config/nvim/lua/custom/plugins
 
 ln -vsfh $PWD/neovim/init.lua ~/.config/nvim/init.lua
-ln -vsfh $PWD/neovim/plugins.lua ~/.config/nvim/lua/plugins.lua
-ln -vsfh $PWD/neovim/plugins/*.lua ~/.config/nvim/lua/plugins/
-ln -vsfh $PWD/neovim/ftplugin/*lua ~/.config/nvim/after/ftplugin/
+ln -vsfh $PWD/neovim/lua/kickstart/plugins/**.lua ~/.config/nvim/lua/kickstart/plugins/
+ln -vsfh $PWD/neovim/lua/custom/plugins/**.lua ~/.config/nvim/lua/custom/plugins/
 
 echo -e "\nScript completed successfully 🎉"
