@@ -55,11 +55,11 @@ end
 
 config.color_scheme = scheme_for_appearance(get_appearance())
 config.font = wezterm.font_with_fallback({
-	'Fantasque Sans Mono',
-	{ family = 'FantasqueSansM Nerd Font', scale = 0.64 }
+	'Geist Mono',
+	{ family = 'Geist Mono', scale = 1.00 }
 })
 
-config.font_size = 16.0
+config.font_size = 12.0
 
 config.window_decorations = "MACOS_FORCE_DISABLE_SHADOW | INTEGRATED_BUTTONS | RESIZE"
 
