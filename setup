@@ -72,6 +72,11 @@ if not set -q _flag_skip_install
 	end
 end
 
+print_heading "Installing latest stable NeoVim"
+
+bob install stable
+bob use stable
+
 print_heading "Symlinking Bat config"
 
 mkdir -p ~/.config/bat/themes
