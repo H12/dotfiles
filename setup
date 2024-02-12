@@ -4,56 +4,6 @@ source script/helpers.fish
 
 argparse 's/skip-install' -- $argv
 
-print_heading "Checking for Homebrew installation"
-
-if not type -q brew
-	print_heading "Homebrew is not installed. Installing"
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-	brew -v
-end
-
-if not set -q _flag_skip_install
-	print_heading "Installing Homebrew packages"
-
-	set homebrew_packages \
-		fish    \
-		git     \
-		git-lfs \
-		wezterm \
-		cormacrelf/tap/dark-notify
-
-	for i in $homebrew_packages
-		brew install $i
-	end
-
-	print_heading "Installing Homebrew fonts"
-
-	set homebrew_fonts \
-		font-fira-code \
-		font-fira-mono \
-		font-fira-sans \
-		font-fira-mono-nerd-font \
-		font-fantasque-sans-mono \
-		font-fantasque-sans-mono-nerd-font
-
-
-	brew tap homebrew/cask-fonts
-	for i in $homebrew_fonts
-		brew install --cask $i
-	end
-
-	print_heading "Installing Homebrew casks"
-
-	set homebrew_casks \
-		wezterm \
-		hammerspoon
-
-	for i in $homebrew_casks
-		brew install --cask $i
-	end
-end
-
 print_heading "Checking for Fisher installation"
 
 if not type -q fisher
@@ -70,11 +20,14 @@ if not set -q _flag_skip_install
 		jethrokuan/z \
 		jethrokuan/fzf \
 		jhillyerd/plugin-git \
-		edc/bass
+		edc/bass \
+		catppuccin/fish
 
 	for i in $fisher_packages
 		fisher install $i
 	end
+
+	yes | fish_config theme save "Catppuccin Frappe"
 end
 
 print_heading "Checking for Rust/Cargo installation"
@@ -111,6 +64,7 @@ if not set -q _flag_skip_install
 		bob-nvim \
 		wiki-tui \
 		starship \
+		zellij \
 		porsmo
 
 	for i in $cargo_packages
@@ -118,21 +72,22 @@ if not set -q _flag_skip_install
 	end
 end
 
+print_heading "Symlinking Bat config"
+
+mkdir -p ~/.config/bat/themes
+
+ln -vsfh $PWD/bat/themes/**.tmTheme ~/.config/bat/themes/
+ln -vsfh $PWD/bat/config ~/.config/bat/config
 
 print_heading "Symlinking Fish config"
 
 ln -vsfh $PWD/fish/config.fish ~/.config/fish/config.fish
 ln -vsfh $PWD/fish/functions/**.fish ~/.config/fish/functions/
 
-print_heading "Symlinking Hammerspoon config"
+print_heading "Symlinking Kitty config"
 
-mkdir -p ~/.hammerspoon
-ln -vsfh $PWD/hammerspoon/init.lua ~/.hammerspoon/init.lua
-
-print_heading "Symlinking WezTerm config"
-
-mkdir -p ~/.config/wezterm
-ln -vsfh $PWD/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
+mkdir -p ~/.config/kitty
+ln -vsfh $PWD/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
 print_heading "Symlinking NeoVim config"
 
@@ -142,5 +97,14 @@ mkdir -p ~/.config/nvim/lua/custom/plugins
 ln -vsfh $PWD/neovim/init.lua ~/.config/nvim/init.lua
 ln -vsfh $PWD/neovim/lua/kickstart/plugins/**.lua ~/.config/nvim/lua/kickstart/plugins/
 ln -vsfh $PWD/neovim/lua/custom/plugins/**.lua ~/.config/nvim/lua/custom/plugins/
+
+print_heading "Symlinking Starship config"
+
+ln -vsfh $PWD/starship/starship.toml ~/.config/starship.toml
+
+print_heading "Symlinking Zellij config"
+
+mkdir -p ~/.config/zellij
+ln -vsfh $PWD/zellij/zellij.kdl ~/.config/zellij/zellij.kdl
 
 echo -e "\nScript completed successfully 🎉"
