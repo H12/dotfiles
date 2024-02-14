@@ -1,1 +1,13 @@
 theme "catppuccin-frappe"
+
+keybinds {
+	unbind "Ctrl o"
+
+	session {
+		bind "Ctrl e" { SwitchToMode "Normal"; }
+	}
+
+	shared_except "session" "locked" {
+		bind "Ctrl e" { SwitchToMode "Session"; }
+	}
+}
