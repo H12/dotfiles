@@ -26,6 +26,14 @@ alias ls "exa"
 # Activate rtx
 if type -q rtx
 	rtx activate fish | source
+
+	function "node -v"
+		rtx current node
+	end
+
+	function "elixir -v"
+		rtx current elixir
+	end
 else
 	echo "rtx not found"
 end
