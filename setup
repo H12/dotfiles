@@ -110,6 +110,6 @@ ln -vsfh $PWD/starship/starship.toml ~/.config/starship.toml
 print_heading "Symlinking Zellij config"
 
 mkdir -p ~/.config/zellij
-ln -vsfh $PWD/zellij/zellij.kdl ~/.config/zellij/zellij.kdl
+ln -vsfh $PWD/zellij/config.kdl ~/.config/zellij/config.kdl
 
 echo -e "\nScript completed successfully 🎉"
