@@ -20,11 +20,6 @@ set -gx VISUAL nvim
 # Bind CTRL+e to editor
 bind \co edit_command_buffer
 
-# Helpful directory aliases
-alias ... "../.."
-alias .... "../../.."
-alias ..... "../../../.."
-
 # CLI Tool Replacement Aliases
 alias ls "exa"
 
