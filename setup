@@ -59,7 +59,7 @@ if not set -q _flag_skip_install
 		ripgrep \
 		bat \
 		exa \
-		rtx-cli \
+		mise \
 		gitui \
 		bob-nvim \
 		wiki-tui \

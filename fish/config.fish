@@ -24,18 +24,10 @@ bind \co edit_command_buffer
 alias ls "exa"
 
 # Activate rtx
-if type -q rtx
-	rtx activate fish | source
-
-	function "node -v"
-		rtx current node
-	end
-
-	function "elixir -v"
-		rtx current elixir
-	end
+if type -q mise
+	mise activate fish | source
 else
-	echo "rtx not found"
+	echo "mise not found"
 end
 
 # Initialize starship prompt
