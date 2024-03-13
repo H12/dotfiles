@@ -60,7 +60,6 @@ if not set -q _flag_skip_install
 		bat \
 		exa \
 		mise \
-		gitui \
 		bob-nvim \
 		wiki-tui \
 		starship \
