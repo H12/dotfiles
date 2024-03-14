@@ -13,3 +13,15 @@ Fish
 ### Setup
 
 `./setup`
+
+### Post Install
+
+Refresh shell and run:
+
+```
+mise use go
+mise use node@20
+```
+
+These dependencies are needed for specified neovim language servers to install
+properly.
