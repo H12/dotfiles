@@ -27,7 +27,7 @@ if not set -q _flag_skip_install
 		fisher install $i
 	end
 
-	yes | fish_config theme save "Catppuccin Frappe"
+	yes | fish_config theme save "Catppuccin Macchiato"
 end
 
 print_heading "Checking for Rust/Cargo installation"
