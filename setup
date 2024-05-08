@@ -97,10 +97,12 @@ print_heading "Symlinking NeoVim config"
 
 mkdir -p ~/.config/nvim/lua/kickstart/plugins
 mkdir -p ~/.config/nvim/lua/custom/plugins
+mkdir -p ~/.config/nvim/ftplugin/
 
 ln -vsfh $PWD/neovim/init.lua ~/.config/nvim/init.lua
 ln -vsfh $PWD/neovim/lua/kickstart/plugins/**.lua ~/.config/nvim/lua/kickstart/plugins/
 ln -vsfh $PWD/neovim/lua/custom/plugins/**.lua ~/.config/nvim/lua/custom/plugins/
+ln -vsfh $PWD/neovim/lua/custom/ftplugin/**.lua ~/.config/nvim/ftplugin/
 
 print_heading "Symlinking Starship config"
 
