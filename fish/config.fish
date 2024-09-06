@@ -43,3 +43,10 @@ if type -q direnv
 else
 	echo "direnv not found"
 end
+
+# pnpm
+set -gx PNPM_HOME "/Users/h14h/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
