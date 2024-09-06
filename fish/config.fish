@@ -36,3 +36,10 @@ if type -q starship
 else
 	echo "starship not found"
 end
+
+# Initialize direnv
+if type -q direnv
+    direnv hook fish | source
+else
+	echo "direnv not found"
+end
